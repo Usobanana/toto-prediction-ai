@@ -1,0 +1,58 @@
+{
+  "rounds": [
+    {
+      "round": 1622,
+      "status": "pending",
+      "match_date": "2026-04-18",
+      "predicted_at": "2026-04-16",
+      "matches": [
+        {"no": 1,  "home": "横浜FM", "away": "川崎F",  "single": "1", "result": null},
+        {"no": 2,  "home": "C大阪",  "away": "京都",   "single": "1", "result": null},
+        {"no": 3,  "home": "水戸",   "away": "柏",     "single": "2", "result": null},
+        {"no": 4,  "home": "G大阪",  "away": "岡山",   "single": "1", "result": null},
+        {"no": 5,  "home": "名古屋", "away": "福岡",   "single": "1", "result": null},
+        {"no": 6,  "home": "鹿島",   "away": "浦和",   "single": "1", "result": null},
+        {"no": 7,  "home": "東京V",  "away": "千葉",   "single": "1", "result": null},
+        {"no": 8,  "home": "仙台",   "away": "栃木C",  "single": "2", "result": null},
+        {"no": 9,  "home": "新潟",   "away": "今治",   "single": "2", "result": null},
+        {"no": 10, "home": "甲府",   "away": "藤枝",   "single": "2", "result": null},
+        {"no": 11, "home": "秋田",   "away": "横浜FC", "single": "1", "result": null},
+        {"no": 12, "home": "山形",   "away": "八戸",   "single": "2", "result": null},
+        {"no": 13, "home": "大宮",   "away": "磐田",   "single": "2", "result": null}
+      ],
+      "multi": {
+        "budget_yen": 4800,
+        "combinations": 48,
+        "plan": [
+          {"no": 1,  "selections": ["1"],       "k": 1},
+          {"no": 2,  "selections": ["1"],       "k": 1},
+          {"no": 3,  "selections": ["2"],       "k": 1},
+          {"no": 4,  "selections": ["1"],       "k": 1},
+          {"no": 5,  "selections": ["1","0","2"],"k": 3},
+          {"no": 6,  "selections": ["1"],       "k": 1},
+          {"no": 7,  "selections": ["1","2"],   "k": 2},
+          {"no": 8,  "selections": ["2"],       "k": 1},
+          {"no": 9,  "selections": ["2"],       "k": 1},
+          {"no": 10, "selections": ["2","1"],   "k": 2},
+          {"no": 11, "selections": ["1"],       "k": 1},
+          {"no": 12, "selections": ["2","1"],   "k": 2},
+          {"no": 13, "selections": ["2","1"],   "k": 2}
+        ]
+      },
+      "correct": null,
+      "total": 13,
+      "accuracy": null
+    }
+  ],
+  "backtest": {
+    "updated_at": "2026-04-16",
+    "models": [
+      {"name": "ランダムフォレスト", "key": "random_forest",       "accuracy": 0.4386, "std": 0.0275},
+      {"name": "ロジスティック回帰", "key": "logistic_regression", "accuracy": 0.4359, "std": 0.0381},
+      {"name": "オッズベース",       "key": "odds_based",          "accuracy": 0.4897, "std": 0.0489},
+      {"name": "LightGBM",           "key": "lightgbm",            "accuracy": 0.4103, "std": 0.0308},
+      {"name": "XGBoost",            "key": "xgboost",             "accuracy": 0.3966, "std": 0.0354},
+      {"name": "ホーム勝ち固定",     "key": "home_win",            "accuracy": 0.4145, "std": 0.0196}
+    ]
+  }
+}
