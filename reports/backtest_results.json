@@ -1,0 +1,362 @@
+{
+  "most_frequent": {
+    "model": "most_frequent",
+    "n_folds": 5,
+    "mean_accuracy": 0.4144827586206897,
+    "std_accuracy": 0.01955509914311424,
+    "min_accuracy": 0.3793103448275862,
+    "max_accuracy": 0.43448275862068964,
+    "fold_details": [
+      {
+        "fold": 0,
+        "accuracy": 0.3793103448275862,
+        "n_samples": 290,
+        "split_date": "2014-08-03"
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.43448275862068964,
+        "n_samples": 290,
+        "split_date": "2017-04-03"
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.41379310344827586,
+        "n_samples": 290,
+        "split_date": "2019-06-10"
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.41379310344827586,
+        "n_samples": 290,
+        "split_date": "2021-11-04"
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.43103448275862066,
+        "n_samples": 290,
+        "split_date": "2023-12-05"
+      }
+    ]
+  },
+  "home_win": {
+    "model": "home_win",
+    "n_folds": 5,
+    "mean_accuracy": 0.4144827586206897,
+    "std_accuracy": 0.01955509914311424,
+    "min_accuracy": 0.3793103448275862,
+    "max_accuracy": 0.43448275862068964,
+    "fold_details": [
+      {
+        "fold": 0,
+        "accuracy": 0.3793103448275862,
+        "n_samples": 290,
+        "split_date": "2014-08-03"
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.43448275862068964,
+        "n_samples": 290,
+        "split_date": "2017-04-03"
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.41379310344827586,
+        "n_samples": 290,
+        "split_date": "2019-06-10"
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.41379310344827586,
+        "n_samples": 290,
+        "split_date": "2021-11-04"
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.43103448275862066,
+        "n_samples": 290,
+        "split_date": "2023-12-05"
+      }
+    ]
+  },
+  "team_win_rate": {
+    "model": "team_win_rate",
+    "n_folds": 5,
+    "mean_accuracy": 0.3696551724137931,
+    "std_accuracy": 0.023427983105466253,
+    "min_accuracy": 0.3310344827586207,
+    "max_accuracy": 0.4,
+    "fold_details": [
+      {
+        "fold": 0,
+        "accuracy": 0.3586206896551724,
+        "n_samples": 290,
+        "split_date": "2014-08-03"
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.38275862068965516,
+        "n_samples": 290,
+        "split_date": "2017-04-03"
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.3758620689655172,
+        "n_samples": 290,
+        "split_date": "2019-06-10"
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.4,
+        "n_samples": 290,
+        "split_date": "2021-11-04"
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.3310344827586207,
+        "n_samples": 290,
+        "split_date": "2023-12-05"
+      }
+    ]
+  },
+  "logistic_regression": {
+    "model": "logistic_regression",
+    "n_folds": 5,
+    "mean_accuracy": 0.4358620689655172,
+    "std_accuracy": 0.03812489644437311,
+    "min_accuracy": 0.3931034482758621,
+    "max_accuracy": 0.5,
+    "fold_details": [
+      {
+        "fold": 0,
+        "accuracy": 0.40344827586206894,
+        "n_samples": 290,
+        "split_date": "2014-08-03"
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.43103448275862066,
+        "n_samples": 290,
+        "split_date": "2017-04-03"
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.5,
+        "n_samples": 290,
+        "split_date": "2019-06-10"
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.3931034482758621,
+        "n_samples": 290,
+        "split_date": "2021-11-04"
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.4517241379310345,
+        "n_samples": 290,
+        "split_date": "2023-12-05"
+      }
+    ]
+  },
+  "random_forest": {
+    "model": "random_forest",
+    "n_folds": 5,
+    "mean_accuracy": 0.4386206896551724,
+    "std_accuracy": 0.02753443417610639,
+    "min_accuracy": 0.4068965517241379,
+    "max_accuracy": 0.47586206896551725,
+    "fold_details": [
+      {
+        "fold": 0,
+        "accuracy": 0.47586206896551725,
+        "n_samples": 290,
+        "split_date": "2014-08-03"
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.43103448275862066,
+        "n_samples": 290,
+        "split_date": "2017-04-03"
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.46551724137931033,
+        "n_samples": 290,
+        "split_date": "2019-06-10"
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.4068965517241379,
+        "n_samples": 290,
+        "split_date": "2021-11-04"
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.41379310344827586,
+        "n_samples": 290,
+        "split_date": "2023-12-05"
+      }
+    ]
+  },
+  "xgboost": {
+    "model": "xgboost",
+    "n_folds": 5,
+    "mean_accuracy": 0.39655172413793105,
+    "std_accuracy": 0.03536794870333265,
+    "min_accuracy": 0.35172413793103446,
+    "max_accuracy": 0.4517241379310345,
+    "fold_details": [
+      {
+        "fold": 0,
+        "accuracy": 0.36551724137931035,
+        "n_samples": 290,
+        "split_date": "2014-08-03"
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.4103448275862069,
+        "n_samples": 290,
+        "split_date": "2017-04-03"
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.4517241379310345,
+        "n_samples": 290,
+        "split_date": "2019-06-10"
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.40344827586206894,
+        "n_samples": 290,
+        "split_date": "2021-11-04"
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.35172413793103446,
+        "n_samples": 290,
+        "split_date": "2023-12-05"
+      }
+    ]
+  },
+  "lightgbm": {
+    "model": "lightgbm",
+    "n_folds": 5,
+    "mean_accuracy": 0.41034482758620694,
+    "std_accuracy": 0.03076511451475237,
+    "min_accuracy": 0.35517241379310344,
+    "max_accuracy": 0.4482758620689655,
+    "fold_details": [
+      {
+        "fold": 0,
+        "accuracy": 0.41724137931034483,
+        "n_samples": 290,
+        "split_date": "2014-08-03"
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.4241379310344828,
+        "n_samples": 290,
+        "split_date": "2017-04-03"
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.4482758620689655,
+        "n_samples": 290,
+        "split_date": "2019-06-10"
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.4068965517241379,
+        "n_samples": 290,
+        "split_date": "2021-11-04"
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.35517241379310344,
+        "n_samples": 290,
+        "split_date": "2023-12-05"
+      }
+    ]
+  },
+  "odds_based": {
+    "model": "odds_based",
+    "n_folds": 5,
+    "mean_accuracy": 0.4896551724137931,
+    "std_accuracy": 0.04891206407309556,
+    "min_accuracy": 0.43448275862068964,
+    "max_accuracy": 0.5482758620689655,
+    "fold_details": [
+      {
+        "fold": 0,
+        "accuracy": 0.5482758620689655,
+        "n_samples": 290,
+        "split_date": "2014-08-03"
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.4793103448275862,
+        "n_samples": 290,
+        "split_date": "2017-04-03"
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.5448275862068965,
+        "n_samples": 290,
+        "split_date": "2019-06-10"
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.4413793103448276,
+        "n_samples": 290,
+        "split_date": "2021-11-04"
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.43448275862068964,
+        "n_samples": 290,
+        "split_date": "2023-12-05"
+      }
+    ]
+  },
+  "rf_with_odds": {
+    "model": "rf_with_odds",
+    "n_folds": 5,
+    "mean_accuracy": 0.4386206896551724,
+    "std_accuracy": 0.02753443417610639,
+    "min_accuracy": 0.4068965517241379,
+    "max_accuracy": 0.47586206896551725,
+    "fold_details": [
+      {
+        "fold": 0,
+        "accuracy": 0.47586206896551725,
+        "n_samples": 290,
+        "split_date": "2014-08-03"
+      },
+      {
+        "fold": 1,
+        "accuracy": 0.43103448275862066,
+        "n_samples": 290,
+        "split_date": "2017-04-03"
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.46551724137931033,
+        "n_samples": 290,
+        "split_date": "2019-06-10"
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.4068965517241379,
+        "n_samples": 290,
+        "split_date": "2021-11-04"
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.41379310344827586,
+        "n_samples": 290,
+        "split_date": "2023-12-05"
+      }
+    ]
+  }
+}

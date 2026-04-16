@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.toto-dream.com)",
+      "WebFetch(domain:keimlab.com)",
+      "WebFetch(domain:data.j-league.or.jp)",
+      "WebFetch(domain:ct-innovation01.xyz)",
+      "WebFetch(domain:mtmt-nlp.com)",
+      "WebFetch(domain:store.toto-dream.com)",
+      "WebFetch(domain:www.thesportsdb.com)",
+      "Bash(pip install:*)",
+      "Bash(python main.py collect)",
+      "Bash(python -c \"import pandas as pd; df=pd.read_csv\\('data/raw/jleague_results.csv'\\); print\\(df.shape\\); print\\(df.head\\(3\\).to_string\\(\\)\\); print\\('\\\\nシーズン別件数:\\\\n', df.groupby\\('season'\\).size\\(\\)\\)\")",
+      "Bash(python -c ':*)",
+      "Bash(python main.py backtest)",
+      "Bash(git add:*)"
+    ]
+  }
+}
