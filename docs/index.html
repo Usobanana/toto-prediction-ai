@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>toto予想AI</title>
+  <style>
+    :root {
+      --primary: #1a56db;
+      --primary-light: #e8f0fe;
+      --success: #0f9d58;
+      --success-light: #e6f4ea;
+      --warning: #f4a00a;
+      --warning-light: #fef9e7;
+      --danger: #d93025;
+      --danger-light: #fce8e6;
+      --draw: #9c27b0;
+      --draw-light: #f3e5f5;
+      --gray: #5f6368;
+      --gray-light: #f8f9fa;
+      --border: #e0e0e0;
+      --shadow: 0 2px 8px rgba(0,0,0,0.1);
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+      background: #f0f2f5;
+      color: #202124;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: 1.2rem; font-weight: 700; }
+    header .subtitle { font-size: 0.75rem; opacity: 0.85; margin-top: 2px; }
+    .header-icon { font-size: 1.5rem; }
+    .header-text { flex: 1; }
+    .updated-badge {
+      font-size: 0.7rem;
+      background: rgba(255,255,255,0.2);
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    /* ── Nav tabs ── */
+    nav {
+      background: white;
+      display: flex;
+      border-bottom: 2px solid var(--border);
+      overflow-x: auto;
+    }
+    nav button {
+      flex: 1;
+      min-width: 80px;
+      padding: 12px 8px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 0.8rem;
+      color: var(--gray);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    nav button.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+      font-weight: 700;
+    }
+    nav button:hover { background: var(--gray-light); }
+
+    /* ── Main content ── */
+    main { padding: 16px; max-width: 700px; margin: 0 auto; }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ── Card ── */
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── Round header ── */
+    .round-header {
+      background: linear-gradient(135deg, var(--primary) 0%, #3b7ddd 100%);
+      border-radius: var(--radius);
+      color: white;
+      padding: 20px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .round-number { font-size: 2rem; font-weight: 900; }
+    .round-label { font-size: 0.85rem; opacity: 0.85; margin-top: 4px; }
+    .round-date { font-size: 0.8rem; opacity: 0.75; margin-top: 6px; }
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+    .status-pending { background: var(--warning); color: white; }
+    .status-done { background: var(--success); color: white; }
+
+    /* ── Match table ── */
+    .match-list { display: flex; flex-direction: column; gap: 6px; }
+    .match-row {
+      display: grid;
+      grid-template-columns: 24px 1fr auto 1fr auto;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 10px;
+      background: var(--gray-light);
+      border-radius: 8px;
+      font-size: 0.82rem;
+    }
+    .match-no { color: var(--gray); font-size: 0.7rem; font-weight: 600; }
+    .team { font-weight: 600; }
+    .home-team { text-align: right; }
+    .away-team { text-align: left; }
+    .vs { color: var(--gray); font-size: 0.7rem; }
+    .prediction-badge {
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+      min-width: 56px;
+      text-align: center;
+    }
+    .pred-1 { background: var(--primary-light); color: var(--primary); }
+    .pred-0 { background: var(--draw-light); color: var(--draw); }
+    .pred-2 { background: var(--danger-light); color: var(--danger); }
+
+    /* 結果との照合 */
+    .match-row.correct { background: var(--success-light); }
+    .match-row.wrong   { background: var(--danger-light); }
+    .result-icon { font-size: 0.9rem; }
+
+    /* ── Single summary bar ── */
+    .pred-summary {
+      background: var(--primary-light);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .pred-summary .label { color: var(--gray); font-size: 0.8rem; }
+    .pred-array { font-family: monospace; font-size: 1rem; font-weight: 700; color: var(--primary); letter-spacing: 2px; }
+
+    /* ── Multi plan ── */
+    .multi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .multi-stat { text-align: center; }
+    .multi-stat .value { font-size: 1.4rem; font-weight: 900; color: var(--primary); }
+    .multi-stat .unit { font-size: 0.7rem; color: var(--gray); }
+    .multi-list { display: flex; flex-direction: column; gap: 4px; }
+    .multi-row {
+      display: grid;
+      grid-template-columns: 24px 1fr auto;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      background: var(--gray-light);
+      border-radius: 8px;
+      font-size: 0.82rem;
+    }
+    .multi-selections { display: flex; gap: 4px; flex-wrap: wrap; }
+    .sel-badge {
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .k1 { background: #e8eaf6; color: #3949ab; }
+    .k2 { background: #e3f2fd; color: #1565c0; }
+    .k3 { background: #e8f5e9; color: #2e7d32; }
+
+    /* ── Score box ── */
+    .score-box {
+      background: linear-gradient(135deg, var(--success) 0%, #34a853 100%);
+      color: white;
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .score-main { font-size: 2.5rem; font-weight: 900; }
+    .score-label { font-size: 0.85rem; opacity: 0.9; margin-top: 4px; }
+
+    /* ── Backtest ── */
+    .model-list { display: flex; flex-direction: column; gap: 8px; }
+    .model-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 12px;
+    }
+    .model-name { font-size: 0.85rem; font-weight: 600; }
+    .model-bar-wrap { flex: 1; }
+    .bar-track {
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--primary);
+      transition: width 0.6s ease;
+    }
+    .bar-fill.best { background: var(--success); }
+    .accuracy-text { font-size: 0.85rem; font-weight: 700; min-width: 48px; text-align: right; }
+
+    /* ── History ── */
+    .history-empty {
+      text-align: center;
+      color: var(--gray);
+      padding: 40px 20px;
+      font-size: 0.9rem;
+    }
+    .history-row {
+      display: grid;
+      grid-template-columns: 60px 1fr auto auto;
+      align-items: center;
+      gap: 8px;
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .history-row:last-child { border-bottom: none; }
+    .history-round { font-weight: 700; font-size: 0.9rem; }
+    .history-date { font-size: 0.75rem; color: var(--gray); }
+    .history-score { font-weight: 700; }
+    .acc-chip {
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .acc-good  { background: var(--success-light); color: var(--success); }
+    .acc-avg   { background: var(--warning-light); color: #b06000; }
+    .acc-low   { background: var(--danger-light); color: var(--danger); }
+
+    /* ── Responsive ── */
+    @media (max-width: 420px) {
+      .match-row { grid-template-columns: 20px 1fr auto 1fr auto; font-size: 0.75rem; }
+      .team { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="header-icon">⚽</span>
+  <div class="header-text">
+    <h1>toto予想AI</h1>
+    <div class="subtitle">機械学習でtotoを予想するシステム</div>
+  </div>
+  <span class="updated-badge" id="updatedBadge">Loading...</span>
+</header>
+
+<nav>
+  <button class="active" onclick="switchTab('current')">今回の予想</button>
+  <button onclick="switchTab('multi')">マルチプラン</button>
+  <button onclick="switchTab('history')">履歴</button>
+  <button onclick="switchTab('backtest')">精度</button>
+</nav>
+
+<main>
+  <!-- ── Tab: 今回の予想 ── -->
+  <div id="tab-current" class="tab-content active">
+    <div id="currentRound"></div>
+  </div>
+
+  <!-- ── Tab: マルチプラン ── -->
+  <div id="tab-multi" class="tab-content">
+    <div id="multiPlan"></div>
+  </div>
+
+  <!-- ── Tab: 履歴 ── -->
+  <div id="tab-history" class="tab-content">
+    <div class="card">
+      <div class="card-title">📋 予想履歴</div>
+      <div id="historyList"></div>
+    </div>
+  </div>
+
+  <!-- ── Tab: 精度 ── -->
+  <div id="tab-backtest" class="tab-content">
+    <div class="card">
+      <div class="card-title">📊 バックテスト正答率（5-fold CV）</div>
+      <div class="model-list" id="backtestList"></div>
+    </div>
+    <div class="card" style="font-size:0.8rem; color:var(--gray);">
+      <div class="card-title">ℹ️ 補足</div>
+      <ul style="padding-left:1.2em; line-height:1.8;">
+        <li>データ: football-data.co.uk J1リーグ 2012〜2025（4,523試合）</li>
+        <li>検証方法: 時系列ウォークフォワード（5分割）</li>
+        <li>ランダムフォレストを本番予想に使用</li>
+        <li>J2/J3チームはEloレーティングでフォールバック</li>
+        <li>引き分け予測率は課題（約0%）</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<script>
+// ── データ読み込み ──────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const res = await fetch('data/rounds.json');
+    return await res.json();
+  } catch(e) {
+    console.error('データ読み込みエラー:', e);
+    return null;
+  }
+}
+
+// ── タブ切り替え ────────────────────────────────────────────────────
+function switchTab(name) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ── 予想バッジ ──────────────────────────────────────────────────────
+function predBadge(pred) {
+  const map = { '1': ['pred-1', 'ホーム勝'], '0': ['pred-0', '引き分け'], '2': ['pred-2', 'アウェイ勝'] };
+  const [cls, label] = map[pred] || ['pred-1', pred];
+  return `<span class="prediction-badge ${cls}">${label}</span>`;
+}
+
+// ── 結果アイコン ────────────────────────────────────────────────────
+function resultIcon(pred, result) {
+  if (result === null) return '';
+  return pred === result ? '✅' : '❌';
+}
+
+// ── 試合行クラス ────────────────────────────────────────────────────
+function matchRowClass(pred, result) {
+  if (result === null) return '';
+  return pred === result ? ' correct' : ' wrong';
+}
+
+// ── 今回の予想タブ ──────────────────────────────────────────────────
+function renderCurrentRound(data) {
+  const latest = data.rounds[data.rounds.length - 1];
+  const container = document.getElementById('currentRound');
+
+  const statusClass = latest.status === 'done' ? 'status-done' : 'status-pending';
+  const statusLabel = latest.status === 'done' ? '結果確定' : '結果待ち';
+
+  // スコア（結果判明後）
+  let scoreHtml = '';
+  if (latest.status === 'done' && latest.correct !== null) {
+    const pct = Math.round(latest.correct / latest.total * 100);
+    const accClass = pct >= 60 ? 'acc-good' : pct >= 40 ? 'acc-avg' : 'acc-low';
+    scoreHtml = `
+      <div class="score-box">
+        <div class="score-main">${latest.correct} / ${latest.total}</div>
+        <div class="score-label">正答数 （${pct}%）</div>
+      </div>`;
+  }
+
+  // 試合一覧
+  const matchRows = latest.matches.map(m => {
+    const icon = resultIcon(m.single, m.result);
+    const rowCls = matchRowClass(m.single, m.result);
+    return `
+      <div class="match-row${rowCls}">
+        <span class="match-no">${m.no}</span>
+        <span class="team home-team">${m.home}</span>
+        <span class="vs">vs</span>
+        <span class="team away-team">${m.away}</span>
+        ${predBadge(m.single)}
+        ${icon ? `<span class="result-icon">${icon}</span>` : ''}
+      </div>`;
+  }).join('');
+
+  // シングル予想配列
+  const predArray = latest.matches.map(m => m.single).join('/');
+
+  container.innerHTML = `
+    <div class="round-header">
+      <div class="round-number">第${latest.round}回</div>
+      <div class="round-label">toto</div>
+      <div class="round-date">試合日: ${latest.match_date}</div>
+      <span class="status-badge ${statusClass}">${statusLabel}</span>
+    </div>
+    ${scoreHtml}
+    <div class="card">
+      <div class="card-title">⚽ シングル予想（13試合）</div>
+      <div class="match-list">${matchRows}</div>
+      <div class="pred-summary">
+        <span class="label">予想配列:</span>
+        <span class="pred-array">${predArray}</span>
+      </div>
+    </div>`;
+}
+
+// ── マルチプランタブ ────────────────────────────────────────────────
+function renderMultiPlan(data) {
+  const latest = data.rounds[data.rounds.length - 1];
+  const multi = latest.multi;
+  const container = document.getElementById('multiPlan');
+
+  const matchMap = {};
+  latest.matches.forEach(m => matchMap[m.no] = m);
+
+  const rows = multi.plan.map(p => {
+    const m = matchMap[p.no];
+    const selBadges = p.selections.map(s => {
+      const labels = { '1': 'ホーム', '0': '引き分け', '2': 'アウェイ' };
+      return `<span class="sel-badge k${p.k}">${labels[s]||s}</span>`;
+    }).join('');
+    return `
+      <div class="multi-row">
+        <span class="match-no">${p.no}</span>
+        <span>${m.home} vs ${m.away}</span>
+        <div class="multi-selections">${selBadges}</div>
+      </div>`;
+  }).join('');
+
+  const p_est = (1/multi.combinations * 100).toFixed(2);
+
+  container.innerHTML = `
+    <div class="round-header">
+      <div class="round-number">第${latest.round}回</div>
+      <div class="round-label">マルチ予想プラン</div>
+      <div class="round-date">試合日: ${latest.match_date}</div>
+    </div>
+    <div class="card">
+      <div class="card-title">💰 購入プラン</div>
+      <div class="multi-header">
+        <div class="multi-stat">
+          <div class="value">${multi.budget_yen.toLocaleString()}<span style="font-size:1rem">円</span></div>
+          <div class="unit">予算</div>
+        </div>
+        <div class="multi-stat">
+          <div class="value">${multi.combinations}</div>
+          <div class="unit">通り</div>
+        </div>
+        <div class="multi-stat">
+          <div class="value">${p_est}<span style="font-size:1rem">%</span></div>
+          <div class="unit">理論当選確率※</div>
+        </div>
+      </div>
+      <div class="multi-list">${rows}</div>
+      <p style="font-size:0.72rem;color:var(--gray);margin-top:12px;line-height:1.6;">
+        ※ 理論当選確率は1/通り数（全的中のみ）。実際の確率はモデル精度に依存します。<br>
+        複数択にした試合は不確実度（接戦）が高い試合を優先して選択。
+      </p>
+    </div>
+    <div class="card" style="font-size:0.82rem;color:var(--gray);">
+      <div class="card-title">📌 購入方法</div>
+      <ol style="padding-left:1.2em;line-height:2;">
+        <li>toto公式サイト / 投票所でマルチを選択</li>
+        <li>上記プランの通りに各試合の結果を選択</li>
+        <li>合計 <strong>${multi.combinations}通り × 100円 = ${multi.budget_yen.toLocaleString()}円</strong></li>
+      </ol>
+    </div>`;
+}
+
+// ── 履歴タブ ────────────────────────────────────────────────────────
+function renderHistory(data) {
+  const container = document.getElementById('historyList');
+  const rounds = [...data.rounds].reverse();
+
+  if (rounds.length === 0) {
+    container.innerHTML = '<div class="history-empty">まだ履歴がありません</div>';
+    return;
+  }
+
+  const html = rounds.map(r => {
+    let scoreHtml = '<span style="color:var(--gray);font-size:0.8rem">結果待ち</span>';
+    let chipHtml = '';
+    if (r.status === 'done' && r.correct !== null) {
+      const pct = Math.round(r.correct / r.total * 100);
+      const cls = pct >= 60 ? 'acc-good' : pct >= 40 ? 'acc-avg' : 'acc-low';
+      scoreHtml = `<span class="history-score">${r.correct}/${r.total}</span>`;
+      chipHtml = `<span class="acc-chip ${cls}">${pct}%</span>`;
+    } else {
+      chipHtml = '<span class="acc-chip" style="background:#eee;color:#999">待機中</span>';
+    }
+    return `
+      <div class="history-row">
+        <div>
+          <div class="history-round">第${r.round}回</div>
+          <div class="history-date">${r.match_date}</div>
+        </div>
+        <div style="font-size:0.8rem;color:var(--gray);">
+          予想: ${r.matches.map(m=>m.single).join('/')}
+        </div>
+        ${scoreHtml}
+        ${chipHtml}
+      </div>`;
+  }).join('');
+
+  container.innerHTML = html;
+}
+
+// ── バックテストタブ ────────────────────────────────────────────────
+function renderBacktest(data) {
+  const container = document.getElementById('backtestList');
+  const models = [...data.backtest.models].sort((a,b) => b.accuracy - a.accuracy);
+  const best = models[0].accuracy;
+
+  const html = models.map((m, i) => {
+    const pct = (m.accuracy * 100).toFixed(1);
+    const barW = (m.accuracy / 0.55 * 100).toFixed(1);
+    const isBest = i === 0;
+    return `
+      <div class="model-row">
+        <div>
+          <div class="model-name">${isBest ? '🥇 ' : ''}${m.name}</div>
+          <div class="bar-track">
+            <div class="bar-fill${isBest?' best':''}" style="width:${barW}%"></div>
+          </div>
+        </div>
+        <div class="accuracy-text">${pct}%</div>
+      </div>`;
+  }).join('');
+
+  container.innerHTML = html;
+}
+
+// ── メイン ──────────────────────────────────────────────────────────
+(async () => {
+  const data = await loadData();
+  if (!data) {
+    document.querySelector('main').innerHTML = '<div class="card" style="text-align:center;padding:40px;">データを読み込めませんでした</div>';
+    return;
+  }
+
+  const latest = data.rounds[data.rounds.length - 1];
+  document.getElementById('updatedBadge').textContent = `更新: ${latest.predicted_at}`;
+
+  renderCurrentRound(data);
+  renderMultiPlan(data);
+  renderHistory(data);
+  renderBacktest(data);
+})();
+</script>
+</body>
+</html>
