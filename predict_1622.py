@@ -2,17 +2,17 @@
 """
 toto 第1622回 予想スクリプト
 ==============================
-モデル: RF+オッズ (バックテスト正答率 47.4%)
-  - RandomForest (n=300, depth=8) + オッズ由来特徴量
-  - オッズデータが存在する試合では implied_prob_* も特徴量として使用
-  - バックテスト: RF単体=44.x% → RF+オッズ=47.36% (最良)
+モデル: ExtraTrees+Optuna+オッズ (バックテスト正答率 47.97%)
+  - ExtraTreesClassifier (n=600, depth=8, leaf=13) + Optuna最適化
+  - オッズ由来特徴量 + 移動距離・疲労・引き分け専用特徴量
+  - バックテスト: HierBayes=45.95% → RF+オッズ=47.36% → ExtraTrees=47.97%
 """
 import sys
 import pandas as pd
 import numpy as np
 from collections import defaultdict
 from src.features.feature_builder import FeatureBuilder, get_feature_columns
-from src.models.ml_models import RandomForestModel
+from src.models.ml_models import ExtraTreesModel
 
 # ── チーム名マッピング (日本語 → football-data.co.uk 英語表記) ──────────
 TEAM_MAP = {
@@ -109,7 +109,7 @@ def main():
     X_all = feat_df[feature_cols].fillna(0)
     y_all = feat_df["result"].astype(str)
 
-    rf = RandomForestModel(include_odds=True)
+    rf = ExtraTreesModel(include_odds=True)
     rf.fit(X_all, y_all)
 
     # 各チームの最新フォーム行と Elo を取得
@@ -176,7 +176,7 @@ def main():
     print("  ※ 基本 = ホームアドバンテージ推定 (データなし)")
     print()
     print("  [注意] 本予想は機械学習モデルによるものです。")
-    print("    バックテスト正答率: 47.4% (RF+オッズ) | 参考情報としてご利用ください。")
+    print("    バックテスト正答率: 47.97% (ExtraTrees+Optuna) | 参考情報としてご利用ください。")
     print("=" * 70)
 
 

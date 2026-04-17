@@ -11,7 +11,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import LabelEncoder
 
@@ -90,6 +90,33 @@ class RandomForestModel(_SklearnBase):
                 max_depth=8,
                 min_samples_leaf=5,
                 class_weight=class_weight,
+                random_state=42,
+                n_jobs=-1,
+            ),
+            include_odds=include_odds,
+        )
+
+    def feature_importances(self, X: pd.DataFrame) -> pd.Series:
+        cols = [c for c in self._feature_cols if c in X.columns]
+        return pd.Series(
+            self._clf.feature_importances_, index=cols
+        ).sort_values(ascending=False)
+
+
+class ExtraTreesModel(_SklearnBase):
+    """
+    ExtraTreesClassifier - Optuna最適化済みパラメータ
+    バックテスト: 47.97% (+0.69% vs RF基本版)
+    """
+    name = "extra_trees"
+
+    def __init__(self, include_odds: bool = True):
+        super().__init__(
+            ExtraTreesClassifier(
+                n_estimators=600,
+                max_depth=8,
+                min_samples_leaf=13,
+                max_features="sqrt",
                 random_state=42,
                 n_jobs=-1,
             ),

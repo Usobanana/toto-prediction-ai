@@ -22,7 +22,8 @@ from src.features.feature_builder import FeatureBuilder, get_feature_columns
 from src.models.poisson_model import PoissonModel
 from src.models.hierarchical_poisson import HierarchicalPoissonModel
 from src.models.ml_models import (
-    RandomForestModel, RandomForestDrawModel, XGBoostModel, LightGBMModel, MLPModel
+    RandomForestModel, RandomForestDrawModel, ExtraTreesModel,
+    XGBoostModel, LightGBMModel, MLPModel,
 )
 from src.models.stacking_model import StackingModel
 from src.models.calibrated_model import CalibratedModel
@@ -135,12 +136,25 @@ def stacking_fn(train_df, test_df, y_train):
 
 
 def stacking_v2_fn(train_df, test_df, y_train):
-    """v2: HierBayes + RF+odds + XGBoost (最強base構成)"""
+    """v2: HierBayes + RF+odds + XGBoost"""
     cols = get_feature_columns(include_odds=True)
     base_models = [
         ("hier",    _make_hier_wrapper()),
         ("rf",      _make_col_filter(RandomForestModel, cols)),
         ("xgb",     _make_col_filter(XGBoostModel, cols)),
+    ]
+    m = StackingModel(base_models, n_splits=3)
+    m.fit(train_df, y_train)
+    return m.predict(test_df)
+
+
+def stacking_v3_fn(train_df, test_df, y_train):
+    """v3: HierBayes + ExtraTrees(最強) + RF (多様性確保)"""
+    cols = get_feature_columns(include_odds=True)
+    base_models = [
+        ("hier", _make_hier_wrapper()),
+        ("et",   _make_col_filter(ExtraTreesModel, cols)),
+        ("rf",   _make_col_filter(RandomForestModel, cols)),
     ]
     m = StackingModel(base_models, n_splits=3)
     m.fit(train_df, y_train)
@@ -217,6 +231,10 @@ def main():
         ("⑩ Stacking v2(Hier+RF+XGB)  [⑦Stk2]",  stacking_v2_fn),
         # ── 引き分け強化 ─────────────────────────────────────────
         ("⑪ RF+Draw閾値補正           [⑧DrawRF]", make_fn_sklearn(RandomForestDrawModel, include_odds=True)),
+        # ── ExtraTrees (Optuna最適化) ──────────────────────────
+        ("⑫ ExtraTrees+Optuna         [⑨ET]",     make_fn_sklearn(ExtraTreesModel,       include_odds=True)),
+        # ── Stacking v3 (最強base) ──────────────────────────
+        ("⑬ Stacking v3(Hier+ET+RF)   [⑩Stk3]",  stacking_v3_fn),
     ]
 
     print("=" * 75)
