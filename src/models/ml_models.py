@@ -82,19 +82,19 @@ class LogisticRegressionModel(_SklearnBase):
 
 class RandomForestModel(_SklearnBase):
     """
-    RandomForestClassifier - Optuna 100試行最適化済みパラメータ
-    バックテスト: 48.05% (旧デフォルト比 +0.77%)
+    RandomForestClassifier - Optuna 60試行最適化済みパラメータ (59特徴量)
+    バックテスト: 48.15% (旧100試行53特徴量比 +0.10%)
     """
     name = "random_forest"
 
     def __init__(self, include_odds: bool = True, class_weight=None):
         super().__init__(
             RandomForestClassifier(
-                n_estimators=600,
-                max_depth=7,
-                min_samples_leaf=4,
-                min_samples_split=16,
-                max_features="log2",
+                n_estimators=400,
+                max_depth=5,
+                min_samples_leaf=7,
+                min_samples_split=8,
+                max_features=0.3,
                 class_weight=class_weight,
                 random_state=42,
                 n_jobs=-1,
@@ -111,8 +111,8 @@ class RandomForestModel(_SklearnBase):
 
 class ExtraTreesModel(_SklearnBase):
     """
-    ExtraTreesClassifier - Optuna最適化済みパラメータ
-    バックテスト: 47.97% (+0.69% vs RF基本版)
+    ExtraTreesClassifier - Optuna 60試行最適化済みパラメータ (59特徴量)
+    バックテスト: 47.99% (旧100試行53特徴量比 +0.02%)
     """
     name = "extra_trees"
 
@@ -120,9 +120,9 @@ class ExtraTreesModel(_SklearnBase):
         super().__init__(
             ExtraTreesClassifier(
                 n_estimators=600,
-                max_depth=8,
-                min_samples_leaf=13,
-                max_features="sqrt",
+                max_depth=5,
+                min_samples_leaf=3,
+                max_features=0.5,
                 random_state=42,
                 n_jobs=-1,
             ),

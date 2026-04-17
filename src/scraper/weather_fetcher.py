@@ -146,15 +146,25 @@ def build_weather_dataset(
             errors += 1
             print("失敗")
 
+        # 100件ごとに増分保存 (途中終了でもデータを保持)
+        if fetched > 0 and fetched % 100 == 0:
+            _save_rows(rows, out_csv)
+
         if sleep_sec > 0:
             time.sleep(sleep_sec)
 
+    out = _save_rows(rows, out_csv)
+    print(f"\n  保存: {out_csv}  (全{len(out)}件 / 今回取得{fetched}件 / スキップ{skipped}件)")
+    return out
+
+
+def _save_rows(rows: list, out_csv: str) -> pd.DataFrame:
+    """行リストを CSV に保存して DataFrame を返す"""
     out = pd.DataFrame(rows)
     if not out.empty:
         out["date"] = pd.to_datetime(out["date"])
         out = out.sort_values("date").reset_index(drop=True)
         out.to_csv(out_csv, index=False)
-        print(f"\n  保存: {out_csv}  (全{len(out)}件 / 今回取得{fetched}件 / スキップ{skipped}件)")
     return out
 
 

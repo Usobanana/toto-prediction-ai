@@ -2,17 +2,17 @@
 """
 toto 第1622回 予想スクリプト
 ==============================
-モデル: ExtraTrees+Optuna+オッズ (バックテスト正答率 47.97%)
-  - ExtraTreesClassifier (n=600, depth=8, leaf=13) + Optuna最適化
-  - オッズ由来特徴量 + 移動距離・疲労・引き分け専用特徴量
-  - バックテスト: HierBayes=45.95% → RF+オッズ=47.36% → ExtraTrees=47.97%
+モデル: RandomForest+Optuna+オッズ (バックテスト正答率 48.15%)
+  - RandomForestClassifier (n=400, depth=5, leaf=7, max_f=0.3) + Optuna 60試行最適化
+  - オッズ由来特徴量 + 移動距離・疲労・引き分け専用特徴量 + スタンディング + 市場価値 (59特徴量)
+  - バックテスト: HierBayes=45.95% → RF+オッズ=48.05% → RF+Optuna59features=48.15%
 """
 import sys
 import pandas as pd
 import numpy as np
 from collections import defaultdict
 from src.features.feature_builder import FeatureBuilder, get_feature_columns
-from src.models.ml_models import ExtraTreesModel
+from src.models.ml_models import RandomForestModel
 
 # ── チーム名マッピング (日本語 → football-data.co.uk 英語表記) ──────────
 TEAM_MAP = {
@@ -109,7 +109,7 @@ def main():
     X_all = feat_df[feature_cols].fillna(0)
     y_all = feat_df["result"].astype(str)
 
-    rf = ExtraTreesModel(include_odds=True)
+    rf = RandomForestModel(include_odds=True)
     rf.fit(X_all, y_all)
 
     # 各チームの最新フォーム行と Elo を取得
@@ -127,7 +127,7 @@ def main():
     # 予想出力
     print()
     print("=" * 70)
-    print(" toto 第1622回 予想 (RF+オッズ / Eloフォールバック)")
+    print(" toto 第1622回 予想 (RF+Optuna 48.15% / Eloフォールバック)")
     print("=" * 70)
     print(f"{'No':>2}  {'ホーム':<9} {'':>2} {'アウェイ':<9}  {'予想':<8}  確率(1/0/2)")
     print("-" * 70)
@@ -171,12 +171,12 @@ def main():
     print("-" * 70)
     print(f"  予想配列: [{' / '.join(total_pred)}]")
     print()
-    print("  ※ RF = RF+オッズモデル (Eloレーティング・直近フォーム・オッズ特徴量を使用)")
+    print("  ※ RF = RandomForest+Optuna (Eloレーティング・直近フォーム・オッズ・スタンディング・市場価値 59特徴量)")
     print("  ※ Elo = Eloレーティングのみによる推定 (過去データが少ないチーム)")
     print("  ※ 基本 = ホームアドバンテージ推定 (データなし)")
     print()
     print("  [注意] 本予想は機械学習モデルによるものです。")
-    print("    バックテスト正答率: 47.97% (ExtraTrees+Optuna) | 参考情報としてご利用ください。")
+    print("    バックテスト正答率: 48.15% (RF+Optuna 60trial, 59features) | 参考情報としてご利用ください。")
     print("=" * 70)
 
 

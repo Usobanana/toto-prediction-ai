@@ -93,6 +93,101 @@ def _lookup_market_value(mv_df: pd.DataFrame, team: str, season: int) -> float:
     return float("nan")
 
 
+# ── 順位トラッカー ───────────────────────────────────────────────────────
+class StandingsTracker:
+    """
+    試合ログを順に受け取りながらシーズン内順位表を動的に維持する。
+    各試合の特徴量は「その試合開始前」の状態を返す (時系列リーク防止)。
+
+    利用例:
+        st = StandingsTracker()
+        for row in df.itertuples():
+            feats = st.get_features(row.home_team, row.away_team, row.date.year)
+            st.update(row.home_team, row.away_team, row.result, row.date.year)
+    """
+
+    def __init__(self, relegation_spots: int = 3):
+        """
+        Parameters
+        ----------
+        relegation_spots : 降格圏チーム数 (J1=下位3チーム)
+        """
+        self.relegation_spots = relegation_spots
+        # season -> team -> {pts, gd, wins, draws, losses, games}
+        self._table: dict[int, dict[str, dict]] = defaultdict(lambda: defaultdict(
+            lambda: {"pts": 0, "gd": 0, "wins": 0, "draws": 0, "losses": 0, "games": 0}
+        ))
+
+    def _get_sorted(self, season: int) -> list[tuple[str, dict]]:
+        """順位順 (pts降順, gd降順) でソートしたリストを返す"""
+        return sorted(
+            self._table[season].items(),
+            key=lambda x: (x[1]["pts"], x[1]["gd"]),
+            reverse=True,
+        )
+
+    def get_features(self, home: str, away: str, season: int) -> dict:
+        """試合前の順位特徴量を返す"""
+        sorted_teams = self._get_sorted(season)
+        n = len(sorted_teams)
+
+        def _rank(team: str) -> int:
+            for i, (t, _) in enumerate(sorted_teams):
+                if t == team:
+                    return i + 1
+            return n + 1  # 未登録は最下位+1
+
+        def _pts(team: str) -> float:
+            return float(self._table[season][team]["pts"]) if team in self._table[season] else 0.0
+
+        def _ppg(team: str) -> float:
+            d = self._table[season][team]
+            return d["pts"] / d["games"] if d["games"] > 0 else 0.0
+
+        def _relgap(team: str) -> float:
+            """降格圏までの勝ち点差 (正=安全, 負=降格圏内)"""
+            if n < self.relegation_spots + 1:
+                return 0.0
+            relegation_cutoff_pts = sorted_teams[-(self.relegation_spots)][1]["pts"]
+            return float(self._table[season][team]["pts"] - relegation_cutoff_pts)
+
+        pts_h = _pts(home)
+        pts_a = _pts(away)
+        rank_h = _rank(home)
+        rank_a = _rank(away)
+
+        return {
+            "standings_pts_home":   pts_h,
+            "standings_pts_away":   pts_a,
+            "standings_pts_diff":   pts_h - pts_a,
+            "standings_rank_home":  float(rank_h),
+            "standings_rank_away":  float(rank_a),
+            "standings_rank_diff":  float(rank_a - rank_h),   # 正=ホーム上位
+            "standings_ppg_home":   _ppg(home),
+            "standings_ppg_away":   _ppg(away),
+            "relgap_home":          _relgap(home),
+            "relgap_away":          _relgap(away),
+        }
+
+    def update(self, home: str, away: str, result: str,
+               season: int, home_score: int = 0, away_score: int = 0) -> None:
+        """試合結果で順位表を更新する"""
+        gd = home_score - away_score
+        h = self._table[season][home]
+        a = self._table[season][away]
+        if result == "1":   # ホーム勝
+            h["pts"] += 3;  h["wins"]   += 1
+            a["losses"] += 1
+        elif result == "0": # 引き分け
+            h["pts"] += 1;  h["draws"]  += 1
+            a["pts"] += 1;  a["draws"]  += 1
+        else:               # アウェイ勝
+            a["pts"] += 3;  a["wins"]   += 1
+            h["losses"] += 1
+        h["gd"] += gd;    h["games"] += 1
+        a["gd"] -= gd;    a["games"] += 1
+
+
 def _haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     """Haversine公式で2点間の距離(km)を返す"""
     R = 6371.0
@@ -142,6 +237,7 @@ class FeatureBuilder:
         elo_ratings = defaultdict(lambda: self.elo_init)
         team_history: dict[str, list[dict]] = defaultdict(list)
         team_last_date: dict[str, pd.Timestamp] = {}
+        standings = StandingsTracker(relegation_spots=3)
 
         for idx, row in df.iterrows():
             home = row["home_team"]
@@ -164,6 +260,11 @@ class FeatureBuilder:
             feat["home_elo"] = elo_ratings[home]
             feat["away_elo"] = elo_ratings[away]
             feat["elo_diff"] = elo_ratings[home] - elo_ratings[away]
+
+            # --- 順位・勝ち点 (試合前の状態) ---
+            current_date = row["date"]
+            season_year = int(current_date.year) if not pd.isna(current_date) else 2020
+            feat.update(standings.get_features(home, away, season_year))
 
             # --- 直近フォーム (全試合) ---
             for prefix, hist in [("home", home_hist), ("away", away_hist)]:
@@ -191,7 +292,6 @@ class FeatureBuilder:
             feat["h2h_draw_rate"] = self._draw_rate(h2h[-5:]) if h2h else 0.25
 
             # --- 休養日数 ---
-            current_date = row["date"]
             feat["rest_days_home"] = (current_date - team_last_date[home]).days if home in team_last_date and not pd.isna(current_date) else 30
             feat["rest_days_away"] = (current_date - team_last_date[away]).days if away in team_last_date and not pd.isna(current_date) else 30
 
@@ -350,6 +450,10 @@ class FeatureBuilder:
                 team_last_date[home] = row["date"]
                 team_last_date[away] = row["date"]
 
+            # 順位表を更新 (試合後)
+            standings.update(home, away, result, season_year,
+                             int(home_score or 0), int(away_score or 0))
+
         return pd.DataFrame(features)
 
     # --- Elo計算 ---
@@ -429,6 +533,11 @@ def get_feature_columns(include_odds: bool = False) -> list[str]:
         # 外部データ系
         "away_travel_km",
         "fatigue_home", "fatigue_away", "fatigue_diff",
+        # 順位・勝ち点 (相対指標のみ: 絶対値はリーグ混在で非互換)
+        "standings_pts_diff",    # ホーム - アウェイ 勝ち点差
+        "standings_rank_diff",   # アウェイ順位 - ホーム順位 (正=ホーム上位)
+        "standings_ppg_home", "standings_ppg_away",  # 勝ち点/試合 (正規化済)
+        "relgap_home", "relgap_away",                # 降格圏との勝ち点差
         # 気象 (match_weather.csv がある場合のみ有効)
         "temp_avg", "precip_sum", "wind_max",
         # 市場価値 (team_market_values.csv がある場合のみ有効)
