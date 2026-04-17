@@ -83,12 +83,13 @@ class LogisticRegressionModel(_SklearnBase):
 class RandomForestModel(_SklearnBase):
     name = "random_forest"
 
-    def __init__(self, include_odds: bool = True):
+    def __init__(self, include_odds: bool = True, class_weight=None):
         super().__init__(
             RandomForestClassifier(
                 n_estimators=300,
                 max_depth=8,
                 min_samples_leaf=5,
+                class_weight=class_weight,
                 random_state=42,
                 n_jobs=-1,
             ),
@@ -100,6 +101,41 @@ class RandomForestModel(_SklearnBase):
         return pd.Series(
             self._clf.feature_importances_, index=cols
         ).sort_values(ascending=False)
+
+
+class RandomForestDrawModel(_SklearnBase):
+    """
+    引き分け予測強化版 RF。
+    predict() は確率最大クラスが全体max_prob < draw_threshold なら引き分けに補正する。
+    """
+    name = "random_forest_draw"
+
+    def __init__(self, include_odds: bool = True, draw_threshold: float = 0.38):
+        super().__init__(
+            RandomForestClassifier(
+                n_estimators=300,
+                max_depth=8,
+                min_samples_leaf=5,
+                class_weight={0: 1, 1: 2, 2: 1},   # 内部ラベル 0=Home, 1=Draw, 2=Away
+                random_state=42,
+                n_jobs=-1,
+            ),
+            include_odds=include_odds,
+        )
+        self._draw_threshold = draw_threshold
+
+    def predict(self, X: pd.DataFrame) -> np.ndarray:
+        proba = self.predict_proba(X)
+        results = []
+        for p in proba:
+            max_p   = p.max()
+            draw_p  = p[1]   # 内部ラベル1 = 引き分け
+            if max_p < self._draw_threshold:
+                # 確信度低 → 引き分けへフォールバック
+                results.append(INV_LABEL_MAP[1])
+            else:
+                results.append(INV_LABEL_MAP[int(np.argmax(p))])
+        return np.array(results)
 
 
 class XGBoostModel(_SklearnBase):

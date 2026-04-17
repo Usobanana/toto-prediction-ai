@@ -22,7 +22,7 @@ from src.features.feature_builder import FeatureBuilder, get_feature_columns
 from src.models.poisson_model import PoissonModel
 from src.models.hierarchical_poisson import HierarchicalPoissonModel
 from src.models.ml_models import (
-    RandomForestModel, XGBoostModel, LightGBMModel, MLPModel
+    RandomForestModel, RandomForestDrawModel, XGBoostModel, LightGBMModel, MLPModel
 )
 from src.models.stacking_model import StackingModel
 from src.models.calibrated_model import CalibratedModel
@@ -93,24 +93,7 @@ def calibrated_fn(ModelClass, include_odds=True):
         return m.predict(test_df[cols].fillna(0))
     return fn
 
-def stacking_fn(train_df, test_df, y_train):
-    """HierBayes + LightGBM(odds) + RF のスタッキング"""
-    fc_odds = get_feature_columns(include_odds=True)
-    cols    = [c for c in fc_odds if c in train_df.columns]
-
-    hier = HierarchicalPoissonModel(prior_strength=5, dc_rho=-0.13, time_decay=365)
-
-    # sklearn 系モデルをラップして統一インターフェース
-    class ColFilter:
-        def __init__(self, model, cols_):
-            self._m = model; self._cols = cols_
-        def fit(self, X, y):
-            self._m.fit(X[self._cols].fillna(0), y)
-        def predict_proba(self, X):
-            return self._m.predict_proba(X[self._cols].fillna(0))
-        def predict(self, X):
-            return self._m.predict(X[self._cols].fillna(0))
-
+def _make_hier_wrapper():
     class HierWrapper:
         def __init__(self):
             self._m = HierarchicalPoissonModel(prior_strength=5, dc_rho=-0.13, time_decay=365)
@@ -121,11 +104,43 @@ def stacking_fn(train_df, test_df, y_train):
             return self._m.predict_proba(X[["home_team","away_team"]])
         def predict(self, X):
             return self._m.predict(X[["home_team","away_team"]])
+    return HierWrapper()
 
+def _make_col_filter(model_cls, cols):
+    class ColFilter:
+        def __init__(self):
+            self._m = model_cls(); self._cols = cols
+        def fit(self, X, y):
+            c = [cc for cc in self._cols if cc in X.columns]
+            self._m.fit(X[c].fillna(0), y)
+        def predict_proba(self, X):
+            c = [cc for cc in self._cols if cc in X.columns]
+            return self._m.predict_proba(X[c].fillna(0))
+        def predict(self, X):
+            c = [cc for cc in self._cols if cc in X.columns]
+            return self._m.predict(X[c].fillna(0))
+    return ColFilter()
+
+def stacking_fn(train_df, test_df, y_train):
+    """v1: HierBayes + LightGBM(odds) + RF のスタッキング"""
+    cols = get_feature_columns(include_odds=True)
     base_models = [
-        ("hier",    HierWrapper()),
-        ("lgbm",    ColFilter(LightGBMModel(), cols)),
-        ("rf",      ColFilter(RandomForestModel(), cols)),
+        ("hier",    _make_hier_wrapper()),
+        ("lgbm",    _make_col_filter(LightGBMModel, cols)),
+        ("rf",      _make_col_filter(RandomForestModel, cols)),
+    ]
+    m = StackingModel(base_models, n_splits=3)
+    m.fit(train_df, y_train)
+    return m.predict(test_df)
+
+
+def stacking_v2_fn(train_df, test_df, y_train):
+    """v2: HierBayes + RF+odds + XGBoost (最強base構成)"""
+    cols = get_feature_columns(include_odds=True)
+    base_models = [
+        ("hier",    _make_hier_wrapper()),
+        ("rf",      _make_col_filter(RandomForestModel, cols)),
+        ("xgb",     _make_col_filter(XGBoostModel, cols)),
     ]
     m = StackingModel(base_models, n_splits=3)
     m.fit(train_df, y_train)
@@ -199,6 +214,9 @@ def main():
         ("⑧ LightGBM+Calibration      [⑤Cal]",    calibrated_fn(LightGBMModel,       include_odds=True)),
         # ── スタッキング ─────────────────────────────────────────
         ("⑨ Stacking(Hier+LGB+RF)     [⑥Stack]",  stacking_fn),
+        ("⑩ Stacking v2(Hier+RF+XGB)  [⑦Stk2]",  stacking_v2_fn),
+        # ── 引き分け強化 ─────────────────────────────────────────
+        ("⑪ RF+Draw閾値補正           [⑧DrawRF]", make_fn_sklearn(RandomForestDrawModel, include_odds=True)),
     ]
 
     print("=" * 75)

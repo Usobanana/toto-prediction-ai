@@ -8,12 +8,54 @@
 4. 対戦相手との直接対決成績 (Head-to-Head)
 5. Eloレーティング (動的チーム強度)
 6. ゴール差平均
+7. 移動距離 (アウェイチームのホームスタジアムから試合会場まで)
+8. 直近14日疲労指標
 """
 
+import math
+import os
 import numpy as np
 import pandas as pd
 from collections import defaultdict
 from typing import Optional
+
+
+# ── スタジアム座標ロード ──────────────────────────────────────────────
+def _load_stadium_coords() -> dict[str, tuple[float, float]]:
+    """チーム名 -> (lat, lon) マッピングを返す"""
+    _dir = os.path.dirname(os.path.abspath(__file__))
+    _csv = os.path.join(_dir, "..", "..", "data", "stadium_coords.csv")
+    try:
+        df = pd.read_csv(_csv)
+        return {row["team"]: (float(row["lat"]), float(row["lon"])) for _, row in df.iterrows()}
+    except Exception:
+        return {}
+
+_STADIUM_COORDS = _load_stadium_coords()
+
+
+# ── 気象データロード ─────────────────────────────────────────────────────
+def _load_weather() -> pd.DataFrame | None:
+    """data/raw/match_weather.csv が存在すれば読み込む (date × home_team → 天気)"""
+    _dir = os.path.dirname(os.path.abspath(__file__))
+    _csv = os.path.join(_dir, "..", "..", "data", "raw", "match_weather.csv")
+    try:
+        df = pd.read_csv(_csv, parse_dates=["date"])
+        return df.set_index(["date", "home_team"])
+    except Exception:
+        return None
+
+_WEATHER_DATA = _load_weather()
+
+
+def _haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    """Haversine公式で2点間の距離(km)を返す"""
+    R = 6371.0
+    phi1, phi2 = math.radians(lat1), math.radians(lat2)
+    dphi = math.radians(lat2 - lat1)
+    dlam = math.radians(lon2 - lon1)
+    a = math.sin(dphi / 2)**2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlam / 2)**2
+    return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 
 class FeatureBuilder:
@@ -101,17 +143,52 @@ class FeatureBuilder:
             h2h = [h for h in home_hist if h["opponent"] == away]
             feat["h2h_home_win_rate"] = self._win_rate(h2h[-5:]) if h2h else 0.33
             feat["h2h_count"] = len(h2h)
+            feat["h2h_draw_rate"] = self._draw_rate(h2h[-5:]) if h2h else 0.25
 
             # --- 休養日数 ---
             current_date = row["date"]
             feat["rest_days_home"] = (current_date - team_last_date[home]).days if home in team_last_date and not pd.isna(current_date) else 30
             feat["rest_days_away"] = (current_date - team_last_date[away]).days if away in team_last_date and not pd.isna(current_date) else 30
 
+            # --- アウェイ移動距離 (km) ---
+            home_coord = _STADIUM_COORDS.get(home)
+            away_coord = _STADIUM_COORDS.get(away)
+            if home_coord and away_coord:
+                feat["away_travel_km"] = _haversine_km(
+                    away_coord[0], away_coord[1],
+                    home_coord[0], home_coord[1],
+                )
+            else:
+                feat["away_travel_km"] = np.nan  # 座標不明
+
+            # --- 直近14日間の試合数 (累積疲労) ---
+            feat["fatigue_home"] = self._matches_in_window(home_hist, current_date, days=14)
+            feat["fatigue_away"] = self._matches_in_window(away_hist, current_date, days=14)
+            feat["fatigue_diff"] = feat["fatigue_home"] - feat["fatigue_away"]
+
             # --- Elo差の絶対値 (引き分け傾向指標) ---
             feat["elo_diff_abs"] = abs(elo_ratings[home] - elo_ratings[away])
 
             # --- 両チームの引き分け率平均 ---
             feat["both_draw_rate"] = (feat["home_form_draw_rate"] + feat["away_form_draw_rate"]) / 2
+
+            # --- 引き分け専用特徴量 ---
+            # ホーム専用・アウェイ専用の引き分け率
+            feat["home_draw_rate_home"] = self._draw_rate([h for h in home_home_hist[-self.form_window:]])
+            feat["away_draw_rate_away"] = self._draw_rate([h for h in away_away_hist[-self.form_window:]])
+            feat["both_venue_draw_rate"] = (feat["home_draw_rate_home"] + feat["away_draw_rate_away"]) / 2
+
+            # 攻撃力バランス: 0.5に近いほど拮抗→引き分けやすい
+            hgf = feat["home_form_goals_for_avg"]
+            agf = feat["away_form_goals_for_avg"]
+            total_goals = hgf + agf
+            feat["attack_balance"] = abs(hgf / total_goals - 0.5) * 2 if total_goals > 0 else 0.0  # 0=均衡 1=一方的
+
+            # 守備力平均 (低い=ロースコア=引き分けやすい)
+            feat["avg_goals_against"] = (feat["home_form_goals_against_avg"] + feat["away_form_goals_against_avg"]) / 2
+
+            # 得点力平均 (低い=ロースコア=引き分けやすい)
+            feat["avg_goals_for"] = (feat["home_form_goals_for_avg"] + feat["away_form_goals_for_avg"]) / 2
 
             # --- 直近3試合の勝率・得点平均 ---
             for prefix, hist in [("home", home_hist), ("away", away_hist)]:
@@ -131,6 +208,23 @@ class FeatureBuilder:
                     else:
                         season_progress = 0.0
             feat["season_progress"] = season_progress
+
+            # --- 気象データ (match_weather.csv が存在する場合) ---
+            if _WEATHER_DATA is not None and not pd.isna(current_date):
+                key = (current_date.normalize(), home)
+                if key in _WEATHER_DATA.index:
+                    w = _WEATHER_DATA.loc[key]
+                    feat["temp_avg"]   = float(w["temp_avg"])
+                    feat["precip_sum"] = float(w["precip_sum"])
+                    feat["wind_max"]   = float(w["wind_max"])
+                else:
+                    feat["temp_avg"]   = np.nan
+                    feat["precip_sum"] = np.nan
+                    feat["wind_max"]   = np.nan
+            else:
+                feat["temp_avg"]   = np.nan
+                feat["precip_sum"] = np.nan
+                feat["wind_max"]   = np.nan
 
             # --- ベッティングオッズ由来の特徴量 ---
             oh = row.get("odds_home_avg")
@@ -170,6 +264,7 @@ class FeatureBuilder:
                 "goals_for": home_score,
                 "goals_against": away_score,
                 "goal_diff": goal_diff,
+                "date": row["date"],
             })
             team_history[away].append({
                 "is_home": False,
@@ -179,6 +274,7 @@ class FeatureBuilder:
                 "goals_for": away_score,
                 "goals_against": home_score,
                 "goal_diff": -goal_diff,
+                "date": row["date"],
             })
 
             # Elo更新
@@ -237,6 +333,16 @@ class FeatureBuilder:
             return 0.0
         return sum(h["goal_diff"] for h in hist) / len(hist)
 
+    def _matches_in_window(self, hist: list, current_date, days: int = 14) -> int:
+        """current_date より前 days 日以内の試合数を返す"""
+        if pd.isna(current_date) or not hist:
+            return 0
+        cutoff = current_date - pd.Timedelta(days=days)
+        return sum(
+            1 for h in hist
+            if "date" in h and not pd.isna(h["date"]) and cutoff <= h["date"] < current_date
+        )
+
 
 def get_feature_columns(include_odds: bool = False) -> list[str]:
     """モデル学習に使う特徴量列名を返す"""
@@ -255,6 +361,15 @@ def get_feature_columns(include_odds: bool = False) -> list[str]:
         "home_form_win_rate_3", "away_form_win_rate_3",
         "home_form_goals_for_avg_3", "away_form_goals_for_avg_3",
         "season_progress",
+        # 引き分け専用特徴量
+        "h2h_draw_rate",
+        "home_draw_rate_home", "away_draw_rate_away", "both_venue_draw_rate",
+        "attack_balance", "avg_goals_against", "avg_goals_for",
+        # 外部データ系
+        "away_travel_km",
+        "fatigue_home", "fatigue_away", "fatigue_diff",
+        # 気象 (match_weather.csv がある場合のみ有効)
+        "temp_avg", "precip_sum", "wind_max",
     ]
     if include_odds:
         base += ["odds_home_avg", "odds_draw_avg", "odds_away_avg",
