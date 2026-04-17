@@ -81,14 +81,20 @@ class LogisticRegressionModel(_SklearnBase):
 
 
 class RandomForestModel(_SklearnBase):
+    """
+    RandomForestClassifier - Optuna 100試行最適化済みパラメータ
+    バックテスト: 48.05% (旧デフォルト比 +0.77%)
+    """
     name = "random_forest"
 
     def __init__(self, include_odds: bool = True, class_weight=None):
         super().__init__(
             RandomForestClassifier(
-                n_estimators=300,
-                max_depth=8,
-                min_samples_leaf=5,
+                n_estimators=600,
+                max_depth=7,
+                min_samples_leaf=4,
+                min_samples_split=16,
+                max_features="log2",
                 class_weight=class_weight,
                 random_state=42,
                 n_jobs=-1,

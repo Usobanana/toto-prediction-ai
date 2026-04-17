@@ -21,6 +21,7 @@ from typing import Optional
 
 
 # ── スタジアム座標ロード ──────────────────────────────────────────────
+
 def _load_stadium_coords() -> dict[str, tuple[float, float]]:
     """チーム名 -> (lat, lon) マッピングを返す"""
     _dir = os.path.dirname(os.path.abspath(__file__))
@@ -46,6 +47,50 @@ def _load_weather() -> pd.DataFrame | None:
         return None
 
 _WEATHER_DATA = _load_weather()
+
+
+# ── 市場価値データロード ─────────────────────────────────────────────────
+def _load_market_values() -> pd.DataFrame | None:
+    """
+    data/raw/team_market_values.csv が存在すれば読み込む。
+    なければ None を返す。
+    カラム: season, team, market_value_eur
+    """
+    _dir = os.path.dirname(os.path.abspath(__file__))
+    _csv = os.path.join(_dir, "..", "..", "data", "raw", "team_market_values.csv")
+    try:
+        df = pd.read_csv(_csv)
+        df["season"] = df["season"].astype(int)
+        df["market_value_eur"] = pd.to_numeric(df["market_value_eur"], errors="coerce")
+        return df
+    except Exception:
+        return None
+
+_MARKET_VALUES = _load_market_values()
+
+
+def _lookup_market_value(mv_df: pd.DataFrame, team: str, season: int) -> float:
+    """
+    チーム名とシーズン年で市場価値 (百万ユーロ) を返す。
+    完全一致するシーズンがなければ最近のシーズンで補完する。
+    見つからない場合は NaN を返す。
+    """
+    team_df = mv_df[mv_df["team"] == team]
+    if team_df.empty:
+        return float("nan")
+
+    # 同一シーズンを優先
+    exact = team_df[team_df["season"] == season]
+    if not exact.empty:
+        return float(exact.iloc[0]["market_value_eur"])
+
+    # 最も近い過去シーズン (リーク回避: 未来データは使わない)
+    past = team_df[team_df["season"] < season].sort_values("season", ascending=False)
+    if not past.empty:
+        return float(past.iloc[0]["market_value_eur"])
+
+    # 過去データなし → NaN (未来データを参照しない = 時系列リーク防止)
+    return float("nan")
 
 
 def _haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
@@ -226,6 +271,22 @@ class FeatureBuilder:
                 feat["precip_sum"] = np.nan
                 feat["wind_max"]   = np.nan
 
+            # --- 市場価値 (team_market_values.csv が存在する場合) ---
+            if _MARKET_VALUES is not None and not pd.isna(current_date):
+                season_year = current_date.year
+                mv_home = _lookup_market_value(_MARKET_VALUES, home, season_year)
+                mv_away = _lookup_market_value(_MARKET_VALUES, away, season_year)
+                feat["market_value_home"] = mv_home
+                feat["market_value_away"] = mv_away
+                if not (np.isnan(mv_home) or np.isnan(mv_away)) and mv_away > 0 and mv_home > 0:
+                    feat["market_value_log_ratio"] = float(np.log(mv_home / mv_away))
+                else:
+                    feat["market_value_log_ratio"] = np.nan
+            else:
+                feat["market_value_home"] = np.nan
+                feat["market_value_away"] = np.nan
+                feat["market_value_log_ratio"] = np.nan
+
             # --- ベッティングオッズ由来の特徴量 ---
             oh = row.get("odds_home_avg")
             od = row.get("odds_draw_avg")
@@ -370,6 +431,8 @@ def get_feature_columns(include_odds: bool = False) -> list[str]:
         "fatigue_home", "fatigue_away", "fatigue_diff",
         # 気象 (match_weather.csv がある場合のみ有効)
         "temp_avg", "precip_sum", "wind_max",
+        # 市場価値 (team_market_values.csv がある場合のみ有効)
+        "market_value_log_ratio",
     ]
     if include_odds:
         base += ["odds_home_avg", "odds_draw_avg", "odds_away_avg",

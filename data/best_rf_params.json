@@ -1,0 +1,12 @@
+{
+  "model": "RF",
+  "score": 0.4805,
+  "baseline": 0.4707,
+  "params": {
+    "n_estimators": 600,
+    "max_depth": 7,
+    "min_samples_leaf": 4,
+    "max_features": "log2",
+    "min_samples_split": 16
+  }
+}
