@@ -37,10 +37,24 @@ class FeatureBuilder:
         df["date"] = pd.to_datetime(df["date"], errors="coerce")
         df = df.sort_values("date").reset_index(drop=True)
 
+        # シーズン進捗計算のために年ごとの日付範囲を事前収集
+        year_date_ranges: dict[int, tuple] = {}
+        for _, row in df.iterrows():
+            d = row["date"]
+            if pd.isna(d):
+                continue
+            y = d.year
+            if y not in year_date_ranges:
+                year_date_ranges[y] = (d, d)
+            else:
+                mn, mx = year_date_ranges[y]
+                year_date_ranges[y] = (min(mn, d), max(mx, d))
+
         # 特徴量格納用
         features = []
         elo_ratings = defaultdict(lambda: self.elo_init)
         team_history: dict[str, list[dict]] = defaultdict(list)
+        team_last_date: dict[str, pd.Timestamp] = {}
 
         for idx, row in df.iterrows():
             home = row["home_team"]
@@ -87,6 +101,36 @@ class FeatureBuilder:
             h2h = [h for h in home_hist if h["opponent"] == away]
             feat["h2h_home_win_rate"] = self._win_rate(h2h[-5:]) if h2h else 0.33
             feat["h2h_count"] = len(h2h)
+
+            # --- 休養日数 ---
+            current_date = row["date"]
+            feat["rest_days_home"] = (current_date - team_last_date[home]).days if home in team_last_date and not pd.isna(current_date) else 30
+            feat["rest_days_away"] = (current_date - team_last_date[away]).days if away in team_last_date and not pd.isna(current_date) else 30
+
+            # --- Elo差の絶対値 (引き分け傾向指標) ---
+            feat["elo_diff_abs"] = abs(elo_ratings[home] - elo_ratings[away])
+
+            # --- 両チームの引き分け率平均 ---
+            feat["both_draw_rate"] = (feat["home_form_draw_rate"] + feat["away_form_draw_rate"]) / 2
+
+            # --- 直近3試合の勝率・得点平均 ---
+            for prefix, hist in [("home", home_hist), ("away", away_hist)]:
+                recent3 = hist[-3:]
+                feat[f"{prefix}_form_win_rate_3"] = self._win_rate(recent3)
+                feat[f"{prefix}_form_goals_for_avg_3"] = self._goals_for_avg(recent3)
+
+            # --- シーズン進捗 ---
+            season_progress = 0.5  # デフォルト
+            if not pd.isna(current_date):
+                y = current_date.year
+                if y in year_date_ranges:
+                    yr_min, yr_max = year_date_ranges[y]
+                    total_days = (yr_max - yr_min).days
+                    if total_days > 0:
+                        season_progress = (current_date - yr_min).days / total_days
+                    else:
+                        season_progress = 0.0
+            feat["season_progress"] = season_progress
 
             # --- ベッティングオッズ由来の特徴量 ---
             oh = row.get("odds_home_avg")
@@ -143,6 +187,11 @@ class FeatureBuilder:
             )
             elo_ratings[home] = home_elo
             elo_ratings[away] = away_elo
+
+            # 最終試合日を更新
+            if not pd.isna(row["date"]):
+                team_last_date[home] = row["date"]
+                team_last_date[away] = row["date"]
 
         return pd.DataFrame(features)
 
@@ -201,6 +250,11 @@ def get_feature_columns(include_odds: bool = False) -> list[str]:
         "away_away_win_rate", "away_away_goals_for_avg", "away_away_goals_against_avg",
         "h2h_home_win_rate", "h2h_count",
         "home_games_played", "away_games_played",
+        "rest_days_home", "rest_days_away",
+        "elo_diff_abs", "both_draw_rate",
+        "home_form_win_rate_3", "away_form_win_rate_3",
+        "home_form_goals_for_avg_3", "away_form_goals_for_avg_3",
+        "season_progress",
     ]
     if include_odds:
         base += ["odds_home_avg", "odds_draw_avg", "odds_away_avg",

@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 toto 第1622回 予想スクリプト
+==============================
+モデル: RF+オッズ (バックテスト正答率 47.4%)
+  - RandomForest (n=300, depth=8) + オッズ由来特徴量
+  - オッズデータが存在する試合では implied_prob_* も特徴量として使用
+  - バックテスト: RF単体=44.x% → RF+オッズ=47.36% (最良)
 """
 import sys
 import pandas as pd
@@ -100,11 +105,11 @@ def main():
     builder = FeatureBuilder(form_window=5)
     feat_df = builder.build(df)
 
-    feature_cols = [c for c in get_feature_columns(include_odds=False) if c in feat_df.columns]
+    feature_cols = [c for c in get_feature_columns(include_odds=True) if c in feat_df.columns]
     X_all = feat_df[feature_cols].fillna(0)
     y_all = feat_df["result"].astype(str)
 
-    rf = RandomForestModel()
+    rf = RandomForestModel(include_odds=True)
     rf.fit(X_all, y_all)
 
     # 各チームの最新フォーム行と Elo を取得
@@ -122,7 +127,7 @@ def main():
     # 予想出力
     print()
     print("=" * 70)
-    print(" toto 第1622回 予想 (RandomForest / Eloフォールバック)")
+    print(" toto 第1622回 予想 (RF+オッズ / Eloフォールバック)")
     print("=" * 70)
     print(f"{'No':>2}  {'ホーム':<9} {'':>2} {'アウェイ':<9}  {'予想':<8}  確率(1/0/2)")
     print("-" * 70)
@@ -166,12 +171,12 @@ def main():
     print("-" * 70)
     print(f"  予想配列: [{' / '.join(total_pred)}]")
     print()
-    print("  ※ RF = RandomForestモデル (Eloレーティング・直近フォーム等を使用)")
+    print("  ※ RF = RF+オッズモデル (Eloレーティング・直近フォーム・オッズ特徴量を使用)")
     print("  ※ Elo = Eloレーティングのみによる推定 (過去データが少ないチーム)")
     print("  ※ 基本 = ホームアドバンテージ推定 (データなし)")
     print()
     print("  [注意] 本予想は機械学習モデルによるものです。")
-    print("    バックテスト正答率: ~44% (各試合) | 参考情報としてご利用ください。")
+    print("    バックテスト正答率: 47.4% (RF+オッズ) | 参考情報としてご利用ください。")
     print("=" * 70)
 
 

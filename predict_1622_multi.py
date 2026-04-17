@@ -11,6 +11,9 @@ toto 第1622回 マルチ予想 (HierBayes + Edge-Aware 最適化)
 実行:
   python predict_1622_multi.py
 """
+# NOTE: バックテスト結果 HierBayes=45.95%, RF+オッズ=47.36%
+# 第1622回予想ではヒストリカル特徴量が使えないため HierBayes を使用
+# 実際の予想は backtest_all_models.py の RF+odds が最良
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -262,7 +265,8 @@ def main():
 
     print()
     print("  [注意]")
-    print(f"  ・確率はHierarchicalPoissonModel(k=5)。バックテスト正答率44.3%。")
+    print(f"  ・確率はHierarchicalPoissonModel(k=5)。バックテスト正答率45.95%。")
+    print(f"  ・RF+オッズモデルのバックテスト正答率は47.36%(特徴量データが必要)。")
     print(f"  ・edge閾値: 高={EDGE_HIGH_THR} / 低={EDGE_LOW_THR} / 確率={PROB_THRESHOLD:.0%}")
     if not has_vr:
         print(f"  ・投票率未取得のためエッジ分析なし。取得後に再実行してください。")
