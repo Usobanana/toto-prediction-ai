@@ -1,0 +1,1134 @@
+date,home_team,away_team,temp_avg,precip_sum,wind_max
+2012-03-10,Gamba Osaka,Vissel Kobe,9.2,0.0,20.2
+2012-03-10,Sanfrecce Hiroshima,Urawa Reds,10.5,0.3,14.8
+2012-03-10,Nagoya Grampus,Shimizu S-Pulse,11.1,0.9,15.1
+2012-03-10,Sagan Tosu,Cerezo Osaka,10.9,0.3,16.6
+2012-03-10,Hokkaido Consadole Sapporo,Iwata,0.2,0.0,2.9
+2012-03-10,Vegalta Sendai,Kashima Antlers,2.6,3.7,11.5
+2012-03-10,Kawasaki Frontale,Albirex Niigata,5.8,2.7,32.5
+2012-03-10,Omiya Ardija,FC Tokyo,5.2,1.7,11.9
+2012-03-11,Kashiwa Reysol,Yokohama F. Marinos,8.5,0.3,14.5
+2012-03-17,Urawa Reds,Kashiwa Reysol,10.5,10.3,8.2
+2012-03-17,Albirex Niigata,Omiya Ardija,5.4,6.2,10.3
+2012-03-17,Kashima Antlers,Kawasaki Frontale,13.4,5.7,26.8
+2012-03-17,Iwata,Sagan Tosu,13.8,23.0,6.8
+2012-03-17,Cerezo Osaka,Gamba Osaka,16.4,2.8,11.5
+2012-03-17,Shimizu S-Pulse,Sanfrecce Hiroshima,11.3,40.8,8.6
+2012-03-17,Vissel Kobe,Hokkaido Consadole Sapporo,16.1,3.5,10.5
+2012-03-17,FC Tokyo,Nagoya Grampus,10.5,8.2,10.9
+2012-03-17,Yokohama F. Marinos,Vegalta Sendai,12.8,12.2,11.5
+2012-03-24,Kawasaki Frontale,Cerezo Osaka,12.0,1.7,24.6
+2012-03-24,Sanfrecce Hiroshima,Kashima Antlers,10.1,0.1,24.7
+2012-03-24,Sagan Tosu,Yokohama F. Marinos,9.9,0.0,26.0
+2012-03-24,Vegalta Sendai,Omiya Ardija,5.5,0.0,23.2
+2012-03-24,Hokkaido Consadole Sapporo,Urawa Reds,-0.5,3.2,10.9
+2012-03-24,Kashiwa Reysol,Shimizu S-Pulse,10.8,1.9,16.3
+2012-03-24,Vissel Kobe,FC Tokyo,10.1,1.2,22.3
+2012-03-25,Nagoya Grampus,Albirex Niigata,7.5,0.0,25.8
+2012-03-25,Gamba Osaka,Iwata,8.2,0.5,22.0
+2012-03-31,Cerezo Osaka,Vegalta Sendai,8.5,2.6,25.1
+2012-03-31,FC Tokyo,Sanfrecce Hiroshima,12.7,10.7,38.9
+2012-03-31,Iwata,Kashiwa Reysol,9.4,13.2,35.8
+2012-03-31,Shimizu S-Pulse,Hokkaido Consadole Sapporo,10.3,16.9,37.6
+2012-03-31,Omiya Ardija,Nagoya Grampus,12.4,9.8,29.5
+2012-03-31,Sagan Tosu,Vissel Kobe,11.2,0.0,23.4
+2012-03-31,Albirex Niigata,Gamba Osaka,3.8,15.2,22.7
+2012-03-31,Urawa Reds,Kawasaki Frontale,13.0,9.0,46.6
+2012-03-31,Yokohama F. Marinos,Kashima Antlers,13.8,10.7,49.9
+2012-04-07,Vissel Kobe,Shimizu S-Pulse,8.8,0.7,12.8
+2012-04-07,Nagoya Grampus,Sagan Tosu,8.4,0.0,28.9
+2012-04-07,Hokkaido Consadole Sapporo,Kashiwa Reysol,-0.1,1.6,11.0
+2012-04-07,Vegalta Sendai,Iwata,5.0,1.0,21.6
+2012-04-07,Kashima Antlers,Urawa Reds,9.0,0.3,18.8
+2012-04-07,Sanfrecce Hiroshima,Gamba Osaka,9.3,0.5,15.8
+2012-04-07,Albirex Niigata,Yokohama F. Marinos,2.9,1.4,18.5
+2012-04-07,Omiya Ardija,Cerezo Osaka,8.7,0.0,29.6
+2012-04-08,Kawasaki Frontale,FC Tokyo,10.4,0.0,28.5
+2012-04-14,Urawa Reds,Vissel Kobe,10.4,11.9,23.0
+2012-04-14,Yokohama F. Marinos,Omiya Ardija,10.7,17.0,33.6
+2012-04-14,FC Tokyo,Kashima Antlers,9.8,17.2,22.4
+2012-04-14,Kashiwa Reysol,Vegalta Sendai,10.5,16.4,28.9
+2012-04-14,Nagoya Grampus,Hokkaido Consadole Sapporo,13.1,0.9,11.2
+2012-04-14,Cerezo Osaka,Albirex Niigata,13.2,0.0,17.1
+2012-04-14,Shimizu S-Pulse,Iwata,11.8,5.1,15.0
+2012-04-14,Gamba Osaka,Kawasaki Frontale,13.2,0.0,17.1
+2012-04-14,Sagan Tosu,Sanfrecce Hiroshima,16.4,0.2,12.9
+2012-04-21,Hokkaido Consadole Sapporo,Kawasaki Frontale,8.5,0.0,8.4
+2012-04-21,Sanfrecce Hiroshima,Nagoya Grampus,18.6,0.9,19.5
+2012-04-21,Iwata,Yokohama F. Marinos,15.2,0.0,25.8
+2012-04-21,Vissel Kobe,Kashiwa Reysol,19.4,0.3,17.9
+2012-04-21,Sagan Tosu,Albirex Niigata,18.7,7.3,17.6
+2012-04-21,Omiya Ardija,Urawa Reds,12.3,0.0,14.8
+2012-04-21,Vegalta Sendai,FC Tokyo,8.6,0.0,14.4
+2012-04-21,Kashima Antlers,Cerezo Osaka,12.1,0.0,22.8
+2012-04-22,Gamba Osaka,Shimizu S-Pulse,14.6,7.2,21.6
+2012-04-28,Kashiwa Reysol,Sagan Tosu,20.4,0.0,14.0
+2012-04-28,FC Tokyo,Shimizu S-Pulse,21.2,0.0,14.3
+2012-04-28,Nagoya Grampus,Urawa Reds,23.1,0.0,12.1
+2012-04-28,Omiya Ardija,Hokkaido Consadole Sapporo,21.7,0.0,14.8
+2012-04-28,Kawasaki Frontale,Sanfrecce Hiroshima,21.1,0.0,12.1
+2012-04-28,Yokohama F. Marinos,Vissel Kobe,20.6,0.0,11.4
+2012-04-28,Albirex Niigata,Vegalta Sendai,22.1,0.0,4.3
+2012-04-28,Kashima Antlers,Gamba Osaka,17.2,0.0,15.6
+2012-04-28,Cerezo Osaka,Iwata,23.9,0.0,9.5
+2012-05-03,Vissel Kobe,Omiya Ardija,20.4,0.7,13.4
+2012-05-03,Hokkaido Consadole Sapporo,Cerezo Osaka,13.6,3.6,23.8
+2012-05-03,Kawasaki Frontale,Iwata,18.8,9.5,19.8
+2012-05-03,Sanfrecce Hiroshima,Albirex Niigata,19.3,0.0,17.8
+2012-05-03,Sagan Tosu,Vegalta Sendai,19.6,0.0,12.3
+2012-05-03,Shimizu S-Pulse,Kashima Antlers,19.2,0.9,8.1
+2012-05-03,Urawa Reds,Yokohama F. Marinos,19.5,4.3,9.5
+2012-05-06,Vegalta Sendai,Shimizu S-Pulse,16.2,8.6,17.7
+2012-05-06,Cerezo Osaka,Vissel Kobe,20.0,1.4,16.8
+2012-05-06,Kashiwa Reysol,Sanfrecce Hiroshima,22.2,0.2,40.0
+2012-05-06,Iwata,Urawa Reds,19.6,4.8,26.8
+2012-05-06,Yokohama F. Marinos,Hokkaido Consadole Sapporo,21.3,0.3,34.5
+2012-05-06,Omiya Ardija,Gamba Osaka,21.8,7.7,28.7
+2012-05-06,Albirex Niigata,FC Tokyo,15.3,3.7,27.3
+2012-05-06,Kashima Antlers,Sagan Tosu,22.2,0.9,32.8
+2012-05-06,Nagoya Grampus,Kawasaki Frontale,18.1,6.0,19.2
+2012-05-12,Vissel Kobe,Nagoya Grampus,15.0,0.0,20.2
+2012-05-12,Urawa Reds,Albirex Niigata,17.2,0.0,23.5
+2012-05-12,Kawasaki Frontale,Kashiwa Reysol,16.8,0.0,20.7
+2012-05-12,Shimizu S-Pulse,Cerezo Osaka,15.7,2.2,19.9
+2012-05-12,Sagan Tosu,Omiya Ardija,20.3,0.0,10.1
+2012-05-12,Iwata,Kashima Antlers,19.3,0.0,27.2
+2012-05-12,Hokkaido Consadole Sapporo,FC Tokyo,6.6,0.0,24.3
+2012-05-12,Sanfrecce Hiroshima,Yokohama F. Marinos,18.9,0.0,6.8
+2012-06-23,Sanfrecce Hiroshima,Omiya Ardija,24.5,0.1,10.0
+2012-06-27,FC Tokyo,Kashiwa Reysol,22.0,0.0,9.2
+2012-06-27,Gamba Osaka,Nagoya Grampus,25.1,0.0,5.3
+2012-06-30,Albirex Niigata,Kashima Antlers,28.9,0.0,8.8
+2012-06-30,Cerezo Osaka,Urawa Reds,24.9,4.1,10.7
+2012-06-30,Yokohama F. Marinos,Nagoya Grampus,24.5,0.0,8.2
+2012-06-30,Vegalta Sendai,Sanfrecce Hiroshima,20.2,0.0,10.4
+2012-06-30,Kawasaki Frontale,Vissel Kobe,25.0,0.0,11.9
+2012-06-30,Omiya Ardija,Shimizu S-Pulse,25.0,0.0,11.8
+2012-06-30,Iwata,FC Tokyo,25.1,1.0,12.8
+2012-06-30,Gamba Osaka,Kashiwa Reysol,24.9,4.1,10.7
+2012-06-30,Sagan Tosu,Hokkaido Consadole Sapporo,26.5,6.1,13.9
+2012-07-07,Hokkaido Consadole Sapporo,Albirex Niigata,23.7,0.2,7.2
+2012-07-07,Shimizu S-Pulse,Kawasaki Frontale,25.4,0.0,20.0
+2012-07-07,Urawa Reds,Sagan Tosu,23.9,2.8,21.0
+2012-07-07,FC Tokyo,Gamba Osaka,23.5,9.4,18.9
+2012-07-07,Sanfrecce Hiroshima,Iwata,25.3,0.0,12.1
+2012-07-07,Kashiwa Reysol,Nagoya Grampus,24.0,3.9,24.5
+2012-07-07,Vissel Kobe,Vegalta Sendai,26.3,0.0,16.1
+2012-07-07,Yokohama F. Marinos,Cerezo Osaka,24.3,6.9,18.2
+2012-07-07,Kashima Antlers,Omiya Ardija,24.1,2.6,22.2
+2012-07-14,Gamba Osaka,Yokohama F. Marinos,27.0,1.7,14.7
+2012-07-14,Cerezo Osaka,Kashima Antlers,27.3,1.7,14.7
+2012-07-14,Shimizu S-Pulse,Kashiwa Reysol,25.9,1.5,16.2
+2012-07-14,Albirex Niigata,Urawa Reds,26.4,0.0,5.1
+2012-07-14,Iwata,Hokkaido Consadole Sapporo,27.2,0.6,12.9
+2012-07-14,Nagoya Grampus,Vegalta Sendai,27.6,1.3,9.8
+2012-07-14,Omiya Ardija,Vissel Kobe,29.6,0.0,6.9
+2012-07-14,Sagan Tosu,FC Tokyo,25.4,9.6,9.8
+2012-07-14,Sanfrecce Hiroshima,Kawasaki Frontale,25.9,5.7,15.5
+2012-07-28,Yokohama F. Marinos,Shimizu S-Pulse,28.3,0.1,18.9
+2012-07-28,Vissel Kobe,Gamba Osaka,31.5,0.0,10.3
+2012-07-28,Kawasaki Frontale,Omiya Ardija,29.2,0.0,27.7
+2012-07-28,Kashiwa Reysol,Cerezo Osaka,30.2,0.0,23.7
+2012-07-28,Kashima Antlers,Sanfrecce Hiroshima,29.2,0.0,20.1
+2012-07-28,Urawa Reds,Iwata,30.8,0.1,17.2
+2012-07-28,Hokkaido Consadole Sapporo,Nagoya Grampus,28.8,0.0,14.1
+2012-07-28,Vegalta Sendai,Sagan Tosu,29.9,0.2,7.2
+2012-07-28,FC Tokyo,Albirex Niigata,29.6,0.8,16.4
+2012-08-04,Cerezo Osaka,Hokkaido Consadole Sapporo,31.0,0.0,20.0
+2012-08-04,Urawa Reds,FC Tokyo,30.0,0.5,13.0
+2012-08-04,Vegalta Sendai,Yokohama F. Marinos,25.8,0.0,13.2
+2012-08-04,Gamba Osaka,Omiya Ardija,30.6,0.0,20.0
+2012-08-04,Albirex Niigata,Kashiwa Reysol,32.9,0.0,12.8
+2012-08-04,Sagan Tosu,Kashima Antlers,31.6,0.0,18.0
+2012-08-04,Nagoya Grampus,Vissel Kobe,31.8,0.5,17.6
+2012-08-04,Sanfrecce Hiroshima,Shimizu S-Pulse,31.6,0.0,14.8
+2012-08-04,Iwata,Kawasaki Frontale,30.3,0.0,25.5
+2012-08-11,Yokohama F. Marinos,Albirex Niigata,27.3,1.7,19.3
+2012-08-11,Omiya Ardija,Sanfrecce Hiroshima,28.9,0.8,12.7
+2012-08-11,Vissel Kobe,Urawa Reds,27.9,10.2,10.8
+2012-08-11,Kawasaki Frontale,Sagan Tosu,27.9,1.0,25.6
+2012-08-11,Kashiwa Reysol,FC Tokyo,27.9,2.0,19.9
+2012-08-11,Gamba Osaka,Cerezo Osaka,27.9,7.8,10.0
+2012-08-11,Kashima Antlers,Iwata,27.1,7.5,16.9
+2012-08-11,Shimizu S-Pulse,Nagoya Grampus,24.9,5.8,11.2
+2012-08-11,Hokkaido Consadole Sapporo,Vegalta Sendai,25.2,0.5,7.5
+2012-08-18,Hokkaido Consadole Sapporo,Vissel Kobe,24.2,0.8,3.4
+2012-08-18,FC Tokyo,Omiya Ardija,26.9,11.0,9.0
+2012-08-18,Albirex Niigata,Sanfrecce Hiroshima,30.4,0.0,11.3
+2012-08-18,Nagoya Grampus,Gamba Osaka,26.8,13.9,16.1
+2012-08-18,Iwata,Cerezo Osaka,26.5,4.1,14.3
+2012-08-18,Urawa Reds,Kashima Antlers,27.8,12.9,11.5
+2012-08-18,Vegalta Sendai,Kashiwa Reysol,26.2,5.3,8.3
+2012-08-18,Yokohama F. Marinos,Kawasaki Frontale,27.2,3.3,11.3
+2012-08-18,Sagan Tosu,Shimizu S-Pulse,30.6,5.2,5.9
+2012-08-25,Sanfrecce Hiroshima,FC Tokyo,30.1,0.1,8.4
+2012-08-25,Omiya Ardija,Vegalta Sendai,32.1,0.0,10.5
+2012-08-25,Vissel Kobe,Sagan Tosu,31.4,0.0,6.6
+2012-08-25,Kawasaki Frontale,Nagoya Grampus,30.9,0.0,18.4
+2012-08-25,Kashiwa Reysol,Iwata,31.3,0.0,14.9
+2012-08-25,Gamba Osaka,Hokkaido Consadole Sapporo,32.4,0.0,6.9
+2012-08-25,Cerezo Osaka,Yokohama F. Marinos,32.3,0.0,6.9
+2012-08-25,Kashima Antlers,Albirex Niigata,28.9,0.0,12.7
+2012-08-25,Shimizu S-Pulse,Urawa Reds,26.8,0.0,11.2
+2012-09-01,Albirex Niigata,Cerezo Osaka,32.0,0.0,9.4
+2012-09-01,Hokkaido Consadole Sapporo,Shimizu S-Pulse,25.6,0.0,15.3
+2012-09-01,Urawa Reds,Omiya Ardija,28.7,0.1,16.7
+2012-09-01,FC Tokyo,Yokohama F. Marinos,27.3,2.0,12.2
+2012-09-01,Iwata,Sanfrecce Hiroshima,27.0,2.5,16.9
+2012-09-01,Vegalta Sendai,Kawasaki Frontale,25.9,0.4,15.1
+2012-09-01,Kashima Antlers,Vissel Kobe,27.0,0.7,17.2
+2012-09-01,Nagoya Grampus,Kashiwa Reysol,27.1,5.6,12.1
+2012-09-01,Sagan Tosu,Gamba Osaka,27.1,0.0,13.8
+2012-09-15,Yokohama F. Marinos,Urawa Reds,27.6,0.2,13.2
+2012-09-15,Shimizu S-Pulse,FC Tokyo,26.2,0.0,11.5
+2012-09-15,Vissel Kobe,Iwata,27.8,2.7,7.3
+2012-09-15,Kawasaki Frontale,Kashima Antlers,28.4,0.7,14.2
+2012-09-15,Kashiwa Reysol,Hokkaido Consadole Sapporo,28.7,0.9,12.9
+2012-09-15,Sanfrecce Hiroshima,Vegalta Sendai,27.7,0.6,10.6
+2012-09-15,Gamba Osaka,Albirex Niigata,28.2,1.3,9.7
+2012-09-15,Omiya Ardija,Sagan Tosu,29.2,0.2,12.7
+2012-09-15,Cerezo Osaka,Nagoya Grampus,28.1,1.3,9.7
+2012-09-22,Kashima Antlers,Yokohama F. Marinos,23.4,1.8,12.7
+2012-09-22,Hokkaido Consadole Sapporo,Omiya Ardija,21.4,2.3,4.7
+2012-09-22,Vegalta Sendai,Vissel Kobe,21.9,1.0,8.4
+2012-09-22,Iwata,Albirex Niigata,25.1,0.9,10.2
+2012-09-22,Urawa Reds,Gamba Osaka,23.3,0.8,10.6
+2012-09-22,FC Tokyo,Kawasaki Frontale,22.1,1.3,7.8
+2012-09-22,Nagoya Grampus,Sanfrecce Hiroshima,25.7,0.0,8.9
+2012-09-22,Sagan Tosu,Kashiwa Reysol,22.3,1.1,6.5
+2012-09-22,Cerezo Osaka,Shimizu S-Pulse,25.9,0.0,6.4
+2012-09-29,Shimizu S-Pulse,Vegalta Sendai,24.4,0.0,13.6
+2012-09-29,Sanfrecce Hiroshima,Sagan Tosu,22.3,0.1,7.3
+2012-09-29,Albirex Niigata,Nagoya Grampus,24.0,0.0,11.4
+2012-09-29,FC Tokyo,Iwata,25.0,0.0,13.9
+2012-09-29,Vissel Kobe,Cerezo Osaka,23.2,2.2,11.0
+2012-09-29,Gamba Osaka,Kashima Antlers,23.2,1.7,9.8
+2012-09-29,Omiya Ardija,Yokohama F. Marinos,25.7,0.0,12.4
+2012-09-29,Kashiwa Reysol,Urawa Reds,25.7,0.4,11.9
+2012-09-29,Kawasaki Frontale,Hokkaido Consadole Sapporo,25.6,0.0,16.2
+2012-10-06,Kashima Antlers,FC Tokyo,24.3,0.4,12.6
+2012-10-06,Cerezo Osaka,Sagan Tosu,22.9,0.1,7.2
+2012-10-06,Albirex Niigata,Vissel Kobe,21.2,0.0,8.1
+2012-10-06,Yokohama F. Marinos,Sanfrecce Hiroshima,24.0,0.7,11.2
+2012-10-06,Kashiwa Reysol,Kawasaki Frontale,24.5,0.6,11.3
+2012-10-06,Nagoya Grampus,Omiya Ardija,24.2,0.0,7.2
+2012-10-06,Urawa Reds,Hokkaido Consadole Sapporo,24.5,0.3,10.6
+2012-10-06,Vegalta Sendai,Gamba Osaka,19.6,5.2,6.1
+2012-10-06,Iwata,Shimizu S-Pulse,24.6,0.4,10.3
+2012-10-20,Vegalta Sendai,Urawa Reds,17.4,0.0,8.4
+2012-10-20,Yokohama F. Marinos,Iwata,19.2,0.0,19.2
+2012-10-20,Kawasaki Frontale,Gamba Osaka,19.3,0.0,19.9
+2012-10-20,Omiya Ardija,Albirex Niigata,18.4,0.0,12.0
+2012-10-20,Shimizu S-Pulse,Vissel Kobe,17.4,0.5,12.2
+2012-10-20,Hokkaido Consadole Sapporo,Kashima Antlers,14.0,0.0,17.8
+2012-10-20,Cerezo Osaka,FC Tokyo,19.2,0.0,9.2
+2012-10-20,Sanfrecce Hiroshima,Kashiwa Reysol,20.1,0.0,8.7
+2012-10-20,Sagan Tosu,Nagoya Grampus,20.7,0.0,7.1
+2012-10-27,Kashiwa Reysol,Omiya Ardija,17.1,0.0,21.4
+2012-10-27,Nagoya Grampus,Yokohama F. Marinos,19.8,0.0,10.9
+2012-10-27,Gamba Osaka,Sanfrecce Hiroshima,20.2,0.0,8.8
+2012-10-27,Iwata,Vegalta Sendai,19.1,0.0,21.6
+2012-10-27,Urawa Reds,Cerezo Osaka,17.2,0.0,18.8
+2012-10-27,FC Tokyo,Hokkaido Consadole Sapporo,16.2,0.3,16.8
+2012-10-27,Kashima Antlers,Shimizu S-Pulse,17.8,0.0,21.4
+2012-10-27,Albirex Niigata,Sagan Tosu,18.3,0.0,20.7
+2012-10-27,Vissel Kobe,Kawasaki Frontale,20.8,0.0,7.7
+2012-11-07,Vissel Kobe,Yokohama F. Marinos,15.9,0.0,16.3
+2012-11-07,Sanfrecce Hiroshima,Hokkaido Consadole Sapporo,15.3,0.0,15.1
+2012-11-07,Kashiwa Reysol,Gamba Osaka,17.0,0.6,11.0
+2012-11-07,Kawasaki Frontale,Urawa Reds,17.5,0.0,11.6
+2012-11-07,Nagoya Grampus,FC Tokyo,14.6,0.0,20.9
+2012-11-07,Omiya Ardija,Kashima Antlers,16.9,0.0,13.6
+2012-11-07,Sagan Tosu,Iwata,14.3,0.0,16.7
+2012-11-07,Shimizu S-Pulse,Albirex Niigata,15.2,0.0,22.0
+2012-11-07,Vegalta Sendai,Cerezo Osaka,14.5,0.0,17.8
+2012-11-17,Yokohama F. Marinos,Kashiwa Reysol,16.4,13.6,38.8
+2012-11-17,Kashima Antlers,Vegalta Sendai,16.5,6.6,32.7
+2012-11-17,Urawa Reds,Sanfrecce Hiroshima,15.9,7.2,28.2
+2012-11-17,Albirex Niigata,Kawasaki Frontale,10.6,10.6,16.8
+2012-11-17,Iwata,Nagoya Grampus,15.3,38.4,31.5
+2012-11-17,Hokkaido Consadole Sapporo,Sagan Tosu,6.3,6.2,3.6
+2012-11-17,FC Tokyo,Vissel Kobe,15.1,12.1,28.1
+2012-11-17,Cerezo Osaka,Omiya Ardija,13.6,28.3,14.9
+2012-11-17,Shimizu S-Pulse,Gamba Osaka,13.7,43.1,39.5
+2012-11-24,Hokkaido Consadole Sapporo,Yokohama F. Marinos,-0.7,1.2,16.1
+2012-11-24,Omiya Ardija,Iwata,9.2,0.0,8.0
+2012-11-24,Kawasaki Frontale,Shimizu S-Pulse,9.3,0.0,17.1
+2012-11-24,Kashiwa Reysol,Vissel Kobe,9.2,0.0,14.4
+2012-11-24,Sagan Tosu,Urawa Reds,11.7,0.8,15.3
+2012-11-24,Nagoya Grampus,Kashima Antlers,11.5,0.0,17.9
+2012-11-24,Sanfrecce Hiroshima,Cerezo Osaka,10.6,0.5,4.5
+2012-11-24,Gamba Osaka,FC Tokyo,10.1,0.0,13.9
+2012-11-24,Vegalta Sendai,Albirex Niigata,5.8,0.0,17.6
+2012-12-01,Albirex Niigata,Hokkaido Consadole Sapporo,2.6,4.9,16.1
+2012-12-01,Iwata,Gamba Osaka,9.6,0.0,24.7
+2012-12-01,Cerezo Osaka,Kawasaki Frontale,7.6,0.0,17.4
+2012-12-01,FC Tokyo,Vegalta Sendai,5.8,1.1,20.4
+2012-12-01,Kashima Antlers,Kashiwa Reysol,6.9,0.4,25.2
+2012-12-01,Shimizu S-Pulse,Omiya Ardija,10.6,0.0,17.4
+2012-12-01,Urawa Reds,Nagoya Grampus,6.2,0.0,18.1
+2012-12-01,Yokohama F. Marinos,Sagan Tosu,7.0,0.8,26.7
+2012-12-01,Vissel Kobe,Sanfrecce Hiroshima,8.2,0.0,19.5
+2013-03-02,Sagan Tosu,Kashima Antlers,7.4,0.0,17.7
+2013-03-02,Cerezo Osaka,Albirex Niigata,5.5,0.0,25.8
+2013-03-02,Sanfrecce Hiroshima,Urawa Reds,6.3,0.0,19.2
+2013-03-02,Nagoya Grampus,Iwata,6.1,0.0,36.2
+2013-03-02,Yokohama F. Marinos,Shonan Bellmare,9.2,0.3,22.6
+2013-03-02,Omiya Ardija,Shimizu S-Pulse,7.9,0.0,35.4
+2013-03-02,Oita Trinita,FC Tokyo,7.4,0.0,19.7
+2013-03-02,Vegalta Sendai,Kofu,2.0,0.1,40.0
+2013-03-03,Kashiwa Reysol,Kawasaki Frontale,8.0,0.0,13.9
+2013-03-09,FC Tokyo,Kashiwa Reysol,17.2,0.0,13.9
+2013-03-09,Shimizu S-Pulse,Yokohama F. Marinos,17.3,0.0,21.5
+2013-03-09,Albirex Niigata,Sanfrecce Hiroshima,5.8,0.0,9.7
+2013-03-09,Kashima Antlers,Vegalta Sendai,16.4,0.0,17.3
+2013-03-09,Shonan Bellmare,Sagan Tosu,17.2,0.0,17.6
+2013-03-09,Iwata,Omiya Ardija,18.0,0.0,22.7
+2013-03-09,Urawa Reds,Nagoya Grampus,17.9,0.0,19.1
+2013-03-09,Kofu,Cerezo Osaka,18.9,0.0,9.4
+2013-03-09,Kawasaki Frontale,Oita Trinita,17.2,0.0,24.7
+2013-03-16,Kofu,Nagoya Grampus,13.8,0.0,17.7
+2013-03-16,Shonan Bellmare,Shimizu S-Pulse,15.9,0.0,12.5
+2013-03-16,Omiya Ardija,Albirex Niigata,15.9,0.0,17.3
+2013-03-16,Yokohama F. Marinos,Iwata,15.7,0.0,12.5
+2013-03-16,Sagan Tosu,Kawasaki Frontale,15.6,0.0,9.6
+2013-03-16,Oita Trinita,Urawa Reds,16.3,0.0,10.5
+2013-03-16,Cerezo Osaka,FC Tokyo,13.8,0.3,15.2
+2013-03-16,Vegalta Sendai,Kashiwa Reysol,10.1,0.4,26.4
+2013-03-17,Sanfrecce Hiroshima,Kashima Antlers,14.7,0.4,13.8
+2013-03-30,Shimizu S-Pulse,Sanfrecce Hiroshima,11.2,0.4,14.5
+2013-03-30,Kawasaki Frontale,Kofu,9.0,0.0,21.1
+2013-03-30,Cerezo Osaka,Vegalta Sendai,13.0,0.0,12.7
+2013-03-30,Iwata,Sagan Tosu,14.2,0.3,13.8
+2013-03-30,Albirex Niigata,Urawa Reds,6.2,0.0,11.5
+2013-03-30,Yokohama F. Marinos,FC Tokyo,8.9,0.0,15.0
+2013-03-30,Kashiwa Reysol,Oita Trinita,8.7,0.0,19.5
+2013-03-30,Omiya Ardija,Kashima Antlers,8.5,0.0,13.8
+2013-03-30,Nagoya Grampus,Shonan Bellmare,15.9,0.0,9.8
+2013-04-06,Shonan Bellmare,Kawasaki Frontale,15.8,17.1,30.3
+2013-04-06,FC Tokyo,Omiya Ardija,15.6,13.7,29.3
+2013-04-06,Sanfrecce Hiroshima,Yokohama F. Marinos,16.1,15.5,20.3
+2013-04-06,Oita Trinita,Kofu,17.3,2.3,8.9
+2013-04-06,Sagan Tosu,Shimizu S-Pulse,17.2,3.7,15.0
+2013-04-06,Vegalta Sendai,Albirex Niigata,14.7,0.5,25.9
+2013-04-06,Kashima Antlers,Cerezo Osaka,16.9,6.7,31.7
+2013-04-06,Kashiwa Reysol,Nagoya Grampus,16.8,8.7,27.6
+2013-04-06,Urawa Reds,Iwata,17.0,6.7,25.7
+2013-04-13,Kofu,Kashiwa Reysol,14.7,0.0,9.4
+2013-04-13,Vegalta Sendai,FC Tokyo,11.3,0.0,18.0
+2013-04-13,Oita Trinita,Kashima Antlers,15.7,0.0,6.2
+2013-04-13,Nagoya Grampus,Albirex Niigata,14.5,0.0,12.3
+2013-04-13,Yokohama F. Marinos,Kawasaki Frontale,12.9,0.0,24.0
+2013-04-13,Cerezo Osaka,Omiya Ardija,12.9,0.0,11.4
+2013-04-13,Shimizu S-Pulse,Iwata,12.6,0.0,19.8
+2013-04-14,Sanfrecce Hiroshima,Sagan Tosu,18.3,1.3,22.3
+2013-04-14,Urawa Reds,Shonan Bellmare,18.5,0.0,37.1
+2013-04-20,Iwata,Sanfrecce Hiroshima,12.8,0.4,24.1
+2013-04-20,Kawasaki Frontale,Vegalta Sendai,9.5,2.2,23.7
+2013-04-20,Shimizu S-Pulse,Cerezo Osaka,9.6,1.7,18.8
+2013-04-20,FC Tokyo,Nagoya Grampus,8.4,2.8,12.0
+2013-04-20,Omiya Ardija,Urawa Reds,8.9,2.4,15.1
+2013-04-20,Shonan Bellmare,Oita Trinita,8.9,3.2,17.3
+2013-04-20,Albirex Niigata,Yokohama F. Marinos,8.6,0.6,8.7
+2013-04-20,Kashima Antlers,Kofu,10.0,1.3,17.9
+2013-04-20,Sagan Tosu,Kashiwa Reysol,10.1,14.6,13.4
+2013-04-26,Kashiwa Reysol,Omiya Ardija,18.6,0.9,33.3
+2013-04-27,Albirex Niigata,Kashima Antlers,10.0,3.8,26.9
+2013-04-27,Iwata,Shonan Bellmare,16.3,0.0,34.3
+2013-04-27,Nagoya Grampus,Sanfrecce Hiroshima,15.3,0.0,29.3
+2013-04-27,Urawa Reds,Shimizu S-Pulse,17.0,0.0,25.7
+2013-04-27,Yokohama F. Marinos,Kofu,16.5,0.3,14.5
+2013-04-27,FC Tokyo,Kawasaki Frontale,16.5,0.3,18.8
+2013-04-27,Cerezo Osaka,Oita Trinita,16.3,0.0,15.0
+2013-04-28,Vegalta Sendai,Sagan Tosu,12.6,0.0,28.7
+2013-05-03,Oita Trinita,Omiya Ardija,18.2,0.0,9.7
+2013-05-03,Kofu,Iwata,18.8,0.0,13.8
+2013-05-03,Shimizu S-Pulse,Albirex Niigata,16.3,0.0,25.0
+2013-05-03,Yokohama F. Marinos,Kashima Antlers,15.1,0.0,19.2
+2013-05-03,Shonan Bellmare,Cerezo Osaka,14.9,0.0,19.2
+2013-05-03,Sagan Tosu,FC Tokyo,18.7,0.0,10.5
+2013-05-03,Kawasaki Frontale,Nagoya Grampus,15.5,0.0,19.9
+2013-05-06,Shimizu S-Pulse,Kawasaki Frontale,20.1,0.0,27.0
+2013-05-06,Cerezo Osaka,Urawa Reds,21.6,0.0,19.8
+2013-05-06,Albirex Niigata,Kofu,15.9,3.1,27.2
+2013-05-06,Omiya Ardija,Sanfrecce Hiroshima,22.5,0.2,16.1
+2013-05-06,Kashiwa Reysol,Yokohama F. Marinos,21.2,0.2,33.3
+2013-05-06,Kashima Antlers,Shonan Bellmare,20.1,0.3,28.8
+2013-05-06,Nagoya Grampus,Vegalta Sendai,22.2,0.0,20.1
+2013-05-06,FC Tokyo,Iwata,21.7,0.3,22.1
+2013-05-06,Oita Trinita,Sagan Tosu,23.6,0.0,9.8
+2013-05-11,Urawa Reds,Kashima Antlers,20.0,13.7,7.9
+2013-05-11,Shonan Bellmare,FC Tokyo,19.5,14.2,20.1
+2013-05-11,Kofu,Shimizu S-Pulse,17.5,19.9,6.1
+2013-05-11,Nagoya Grampus,Yokohama F. Marinos,18.8,25.3,7.2
+2013-05-11,Kawasaki Frontale,Cerezo Osaka,20.1,14.6,31.8
+2013-05-11,Sagan Tosu,Albirex Niigata,21.3,0.0,9.7
+2013-05-11,Iwata,Kashiwa Reysol,19.6,42.2,12.2
+2013-05-11,Sanfrecce Hiroshima,Oita Trinita,20.6,0.0,5.7
+2013-05-11,Vegalta Sendai,Omiya Ardija,15.1,7.6,4.7
+2013-05-18,Kashiwa Reysol,Cerezo Osaka,21.3,0.0,29.0
+2013-05-18,Albirex Niigata,Oita Trinita,20.8,0.0,8.4
+2013-05-18,Sanfrecce Hiroshima,Kofu,22.9,0.0,11.2
+2013-05-18,Kashima Antlers,Nagoya Grampus,20.7,0.0,20.7
+2013-05-18,Iwata,Kawasaki Frontale,21.0,0.0,13.4
+2013-05-18,Yokohama F. Marinos,Vegalta Sendai,20.0,0.0,27.3
+2013-05-18,FC Tokyo,Shimizu S-Pulse,21.2,0.0,23.4
+2013-05-18,Urawa Reds,Sagan Tosu,21.9,0.0,24.0
+2013-05-18,Omiya Ardija,Shonan Bellmare,22.2,0.0,21.1
+2013-05-25,Cerezo Osaka,Nagoya Grampus,26.9,0.0,12.0
+2013-05-25,Kofu,Omiya Ardija,22.1,0.0,8.0
+2013-05-25,Shimizu S-Pulse,Vegalta Sendai,19.0,0.0,15.8
+2013-05-25,Shonan Bellmare,Sanfrecce Hiroshima,19.0,0.0,19.2
+2013-05-25,Kawasaki Frontale,Albirex Niigata,20.0,0.0,20.2
+2013-05-25,Sagan Tosu,Yokohama F. Marinos,29.4,0.0,7.8
+2013-05-25,Oita Trinita,Iwata,24.8,0.0,18.6
+2013-05-25,Kashima Antlers,FC Tokyo,17.7,0.0,13.8
+2013-05-26,Kashiwa Reysol,Urawa Reds,23.3,0.0,22.5
+2013-05-29,Sanfrecce Hiroshima,Kashiwa Reysol,25.2,0.2,17.6
+2013-05-29,Urawa Reds,Vegalta Sendai,21.7,2.6,28.3
+2013-07-06,Kofu,Urawa Reds,27.2,0.1,11.9
+2013-07-06,FC Tokyo,Sanfrecce Hiroshima,28.9,0.0,27.5
+2013-07-06,Albirex Niigata,Kashiwa Reysol,24.6,4.6,19.0
+2013-07-06,Iwata,Cerezo Osaka,27.6,0.7,23.5
+2013-07-06,Kawasaki Frontale,Kashima Antlers,27.6,0.0,43.5
+2013-07-06,Nagoya Grampus,Shimizu S-Pulse,28.7,1.8,16.6
+2013-07-06,Omiya Ardija,Sagan Tosu,29.9,0.0,20.6
+2013-07-06,Vegalta Sendai,Shonan Bellmare,27.3,2.6,18.4
+2013-07-06,Yokohama F. Marinos,Oita Trinita,27.1,0.0,32.9
+2013-07-10,Kashima Antlers,Shimizu S-Pulse,29.9,0.0,13.2
+2013-07-10,Cerezo Osaka,Yokohama F. Marinos,30.8,0.0,11.1
+2013-07-10,Iwata,Albirex Niigata,31.2,0.0,20.2
+2013-07-10,Omiya Ardija,Nagoya Grampus,32.2,0.0,11.2
+2013-07-10,Sanfrecce Hiroshima,Kawasaki Frontale,31.0,0.0,11.6
+2013-07-10,Sagan Tosu,Kofu,31.1,0.0,9.6
+2013-07-10,Shonan Bellmare,Kashiwa Reysol,28.5,0.0,13.1
+2013-07-10,Urawa Reds,FC Tokyo,32.1,1.7,10.1
+2013-07-10,Oita Trinita,Vegalta Sendai,31.5,0.0,7.8
+2013-07-13,Yokohama F. Marinos,Omiya Ardija,29.3,0.0,7.4
+2013-07-13,Vegalta Sendai,Iwata,23.4,6.0,8.4
+2013-07-13,Nagoya Grampus,Sagan Tosu,28.4,2.7,13.7
+2013-07-13,Kawasaki Frontale,Urawa Reds,30.3,0.0,10.8
+2013-07-13,Sanfrecce Hiroshima,Cerezo Osaka,29.5,6.5,13.2
+2013-07-13,Kofu,Shonan Bellmare,27.8,0.2,5.5
+2013-07-13,Shimizu S-Pulse,Oita Trinita,28.8,0.0,16.6
+2013-07-13,Kashiwa Reysol,Kashima Antlers,30.2,0.7,7.9
+2013-07-13,Albirex Niigata,FC Tokyo,24.4,15.0,21.5
+2013-07-17,Oita Trinita,Nagoya Grampus,31.3,0.0,7.5
+2013-07-17,Kashima Antlers,Iwata,24.9,0.5,10.3
+2013-07-17,Kashiwa Reysol,Shimizu S-Pulse,26.2,2.6,11.9
+2013-07-17,Shonan Bellmare,Albirex Niigata,24.6,4.5,18.6
+2013-07-17,Cerezo Osaka,Sagan Tosu,29.6,0.0,14.6
+2013-07-17,FC Tokyo,Kofu,25.0,7.6,13.0
+2013-07-17,Vegalta Sendai,Sanfrecce Hiroshima,20.2,3.0,8.4
+2013-07-17,Omiya Ardija,Kawasaki Frontale,26.1,4.2,11.5
+2013-07-17,Urawa Reds,Yokohama F. Marinos,26.2,4.0,8.9
+2013-07-31,Yokohama F. Marinos,Kashiwa Reysol,27.5,0.0,12.1
+2013-07-31,Nagoya Grampus,Kashima Antlers,31.3,0.0,16.8
+2013-07-31,Shimizu S-Pulse,FC Tokyo,26.1,0.8,15.1
+2013-07-31,Sagan Tosu,Oita Trinita,30.5,1.8,14.5
+2013-07-31,Kofu,Vegalta Sendai,31.2,0.0,5.6
+2013-07-31,Kawasaki Frontale,Shonan Bellmare,28.3,0.0,13.0
+2013-07-31,Iwata,Urawa Reds,32.7,0.0,17.9
+2013-07-31,Sanfrecce Hiroshima,Omiya Ardija,31.9,0.2,13.2
+2013-07-31,Albirex Niigata,Cerezo Osaka,27.0,0.3,9.7
+2013-08-03,Albirex Niigata,Shimizu S-Pulse,24.7,0.8,9.5
+2013-08-03,Cerezo Osaka,Kofu,30.2,0.1,10.6
+2013-08-03,Urawa Reds,Sanfrecce Hiroshima,27.7,0.5,10.8
+2013-08-03,Kashima Antlers,Omiya Ardija,26.0,0.5,13.2
+2013-08-03,FC Tokyo,Oita Trinita,26.1,0.1,13.0
+2013-08-03,Iwata,Nagoya Grampus,29.3,0.8,12.8
+2013-08-03,Kashiwa Reysol,Sagan Tosu,27.4,0.7,14.5
+2013-08-03,Shonan Bellmare,Yokohama F. Marinos,25.3,0.1,13.0
+2013-08-03,Vegalta Sendai,Kawasaki Frontale,24.2,0.5,7.3
+2013-08-10,Yokohama F. Marinos,Sagan Tosu,31.7,0.0,9.8
+2013-08-10,Shimizu S-Pulse,Shonan Bellmare,30.0,0.0,11.9
+2013-08-10,Kofu,Albirex Niigata,34.8,0.0,4.3
+2013-08-10,Sanfrecce Hiroshima,Iwata,34.8,0.0,8.3
+2013-08-10,Kawasaki Frontale,FC Tokyo,33.2,0.0,14.6
+2013-08-10,Nagoya Grampus,Urawa Reds,35.4,0.0,18.5
+2013-08-10,Oita Trinita,Kashiwa Reysol,34.6,0.0,8.5
+2013-08-10,Omiya Ardija,Cerezo Osaka,34.8,0.0,8.4
+2013-08-10,Vegalta Sendai,Kashima Antlers,30.6,0.0,13.1
+2013-08-17,FC Tokyo,Yokohama F. Marinos,29.6,0.0,23.0
+2013-08-17,Kashima Antlers,Albirex Niigata,29.2,0.0,19.2
+2013-08-17,Urawa Reds,Oita Trinita,30.9,0.0,23.6
+2013-08-17,Kofu,Kawasaki Frontale,30.4,0.0,9.7
+2013-08-17,Cerezo Osaka,Shimizu S-Pulse,32.8,0.0,13.9
+2013-08-17,Sanfrecce Hiroshima,Nagoya Grampus,31.9,0.0,11.5
+2013-08-17,Shonan Bellmare,Iwata,28.4,0.0,24.1
+2013-08-17,Kashiwa Reysol,Vegalta Sendai,30.4,0.0,27.7
+2013-08-17,Sagan Tosu,Omiya Ardija,32.5,0.0,8.6
+2013-08-24,Shimizu S-Pulse,Urawa Reds,27.3,0.0,19.8
+2013-08-24,Albirex Niigata,Kawasaki Frontale,26.5,0.2,15.6
+2013-08-24,Iwata,FC Tokyo,28.5,0.3,22.0
+2013-08-24,Kashima Antlers,Yokohama F. Marinos,30.0,0.5,8.8
+2013-08-24,Nagoya Grampus,Cerezo Osaka,28.7,0.4,15.1
+2013-08-24,Oita Trinita,Sanfrecce Hiroshima,29.7,0.6,7.6
+2013-08-24,Omiya Ardija,Kashiwa Reysol,30.7,0.3,13.8
+2013-08-24,Sagan Tosu,Vegalta Sendai,26.7,5.4,8.7
+2013-08-24,Shonan Bellmare,Kofu,28.8,0.3,6.8
+2013-08-28,Albirex Niigata,Iwata,24.1,0.4,10.3
+2013-08-28,FC Tokyo,Sagan Tosu,27.5,0.1,10.6
+2013-08-28,Kashiwa Reysol,Shonan Bellmare,29.1,0.0,9.8
+2013-08-28,Kawasaki Frontale,Omiya Ardija,28.3,0.0,13.7
+2013-08-28,Kofu,Sanfrecce Hiroshima,28.8,0.0,5.0
+2013-08-28,Nagoya Grampus,Oita Trinita,29.5,0.0,15.1
+2013-08-28,Shimizu S-Pulse,Kashima Antlers,25.6,0.0,12.3
+2013-08-28,Vegalta Sendai,Cerezo Osaka,25.5,0.0,16.9
+2013-08-28,Yokohama F. Marinos,Urawa Reds,27.5,0.0,10.5
+2013-08-31,Urawa Reds,Albirex Niigata,31.1,0.0,23.7
+2013-08-31,Kashima Antlers,Kashiwa Reysol,30.4,0.0,28.5
+2013-08-31,Cerezo Osaka,Kawasaki Frontale,29.3,3.8,25.6
+2013-08-31,Sanfrecce Hiroshima,FC Tokyo,26.1,21.9,19.7
+2013-08-31,Iwata,Kofu,30.2,1.2,24.9
+2013-08-31,Oita Trinita,Shimizu S-Pulse,27.5,2.6,14.6
+2013-08-31,Omiya Ardija,Yokohama F. Marinos,31.5,0.1,17.1
+2013-08-31,Sagan Tosu,Nagoya Grampus,24.3,19.6,3.8
+2013-08-31,Shonan Bellmare,Vegalta Sendai,29.5,0.0,30.6
+2013-09-13,Kashiwa Reysol,Iwata,28.7,0.0,13.2
+2013-09-14,Shimizu S-Pulse,Nagoya Grampus,26.4,0.0,10.4
+2013-09-14,Kofu,Kashima Antlers,27.8,0.1,7.9
+2013-09-14,FC Tokyo,Urawa Reds,28.0,0.1,13.2
+2013-09-14,Albirex Niigata,Omiya Ardija,29.3,0.0,8.4
+2013-09-14,Kawasaki Frontale,Sanfrecce Hiroshima,28.8,0.2,13.0
+2013-09-14,Vegalta Sendai,Oita Trinita,26.0,0.6,8.0
+2013-09-14,Sagan Tosu,Shonan Bellmare,29.3,1.3,7.3
+2013-09-14,Yokohama F. Marinos,Cerezo Osaka,28.1,0.0,11.2
+2013-09-21,Sanfrecce Hiroshima,Albirex Niigata,27.6,0.0,7.7
+2013-09-21,Iwata,Kashima Antlers,26.6,0.0,12.2
+2013-09-21,Omiya Ardija,Vegalta Sendai,26.3,0.0,9.0
+2013-09-21,Urawa Reds,Kofu,26.7,0.0,8.7
+2013-09-21,Kawasaki Frontale,Sagan Tosu,25.9,0.0,16.2
+2013-09-21,Nagoya Grampus,FC Tokyo,27.1,0.0,8.2
+2013-09-21,Oita Trinita,Shonan Bellmare,26.0,0.3,9.7
+2013-09-21,Yokohama F. Marinos,Shimizu S-Pulse,25.3,0.0,13.0
+2013-09-22,Cerezo Osaka,Kashiwa Reysol,27.1,0.0,12.0
+2013-09-28,Sagan Tosu,Sanfrecce Hiroshima,26.5,0.0,9.3
+2013-09-28,Kashima Antlers,Oita Trinita,21.8,0.0,14.9
+2013-09-28,Vegalta Sendai,Yokohama F. Marinos,18.8,0.0,14.8
+2013-09-28,Kashiwa Reysol,Albirex Niigata,22.0,0.0,14.0
+2013-09-28,Shimizu S-Pulse,Kofu,20.9,0.0,10.9
+2013-09-28,Shonan Bellmare,Urawa Reds,21.0,0.0,11.0
+2013-09-28,Cerezo Osaka,Iwata,24.8,0.0,12.6
+2013-09-28,Omiya Ardija,FC Tokyo,21.5,0.0,11.8
+2013-09-28,Nagoya Grampus,Kawasaki Frontale,23.6,0.0,13.9
+2013-10-05,Kofu,Yokohama F. Marinos,19.5,0.0,6.5
+2013-10-05,FC Tokyo,Kashima Antlers,19.2,1.0,17.5
+2013-10-05,Urawa Reds,Omiya Ardija,19.4,8.1,20.3
+2013-10-05,Shonan Bellmare,Nagoya Grampus,19.8,0.6,23.8
+2013-10-05,Sanfrecce Hiroshima,Shimizu S-Pulse,20.6,21.4,9.4
+2013-10-05,Albirex Niigata,Sagan Tosu,23.1,0.0,8.0
+2013-10-05,Iwata,Vegalta Sendai,25.5,0.0,19.4
+2013-10-05,Oita Trinita,Cerezo Osaka,20.5,21.7,11.5
+2013-10-06,Kawasaki Frontale,Kashiwa Reysol,24.0,0.0,16.1
+2013-10-19,Kashiwa Reysol,Kofu,17.5,0.9,23.9
+2013-10-19,Kashima Antlers,Urawa Reds,18.9,0.8,20.6
+2013-10-19,Kawasaki Frontale,Iwata,17.2,0.2,29.9
+2013-10-19,Vegalta Sendai,Nagoya Grampus,16.4,0.0,13.3
+2013-10-19,Omiya Ardija,Oita Trinita,17.1,0.2,14.8
+2013-10-19,Cerezo Osaka,Shonan Bellmare,17.3,0.3,16.0
+2013-10-19,FC Tokyo,Albirex Niigata,16.7,0.4,18.5
+2013-10-19,Shimizu S-Pulse,Sagan Tosu,17.6,0.3,19.3
+2013-10-19,Yokohama F. Marinos,Sanfrecce Hiroshima,17.0,0.0,25.1
+2013-10-26,Sanfrecce Hiroshima,Vegalta Sendai,16.1,0.0,21.1
+2013-10-27,Urawa Reds,Kashiwa Reysol,17.2,0.0,22.6
+2013-10-27,Oita Trinita,Yokohama F. Marinos,17.1,0.0,8.2
+2013-10-27,Nagoya Grampus,Omiya Ardija,16.8,0.0,21.5
+2013-10-27,Iwata,Shimizu S-Pulse,17.9,0.0,20.4
+2013-10-27,Kofu,FC Tokyo,16.6,0.0,7.7
+2013-10-27,Albirex Niigata,Shonan Bellmare,14.0,0.3,22.7
+2013-10-27,Kashima Antlers,Kawasaki Frontale,17.6,0.0,21.7
+2013-10-27,Sagan Tosu,Cerezo Osaka,17.6,0.0,7.9
+2013-11-10,Yokohama F. Marinos,Nagoya Grampus,18.5,1.2,31.2
+2013-11-10,Shonan Bellmare,Kashima Antlers,18.4,1.2,31.2
+2013-11-10,FC Tokyo,Cerezo Osaka,17.5,1.7,23.1
+2013-11-10,Kashiwa Reysol,Sanfrecce Hiroshima,18.3,2.7,36.9
+2013-11-10,Oita Trinita,Albirex Niigata,18.0,0.2,16.5
+2013-11-10,Kawasaki Frontale,Shimizu S-Pulse,18.5,1.0,40.7
+2013-11-10,Omiya Ardija,Kofu,17.4,2.2,13.4
+2013-11-10,Vegalta Sendai,Urawa Reds,11.9,6.1,22.0
+2013-11-10,Sagan Tosu,Iwata,16.1,1.1,16.7
+2013-11-23,Iwata,Yokohama F. Marinos,13.1,0.0,7.2
+2013-11-23,Shimizu S-Pulse,Omiya Ardija,11.5,0.0,7.8
+2013-11-23,Cerezo Osaka,Sanfrecce Hiroshima,11.9,0.0,7.1
+2013-11-23,Kashima Antlers,Sagan Tosu,12.8,0.0,9.0
+2013-11-23,Nagoya Grampus,Kashiwa Reysol,12.6,0.0,8.5
+2013-11-23,FC Tokyo,Shonan Bellmare,11.5,0.0,9.7
+2013-11-23,Kofu,Oita Trinita,10.8,0.0,6.7
+2013-11-23,Albirex Niigata,Vegalta Sendai,10.4,0.2,12.8
+2013-11-23,Urawa Reds,Kawasaki Frontale,12.2,0.0,8.7
+2013-11-30,Nagoya Grampus,Kofu,9.1,0.0,15.3
+2013-11-30,Vegalta Sendai,Shimizu S-Pulse,8.1,0.0,19.6
+2013-11-30,Oita Trinita,Kawasaki Frontale,12.0,0.0,11.6
+2013-11-30,Kashiwa Reysol,FC Tokyo,10.1,0.0,8.6
+2013-11-30,Yokohama F. Marinos,Albirex Niigata,10.1,0.0,9.8
+2013-11-30,Omiya Ardija,Iwata,9.8,0.0,9.2
+2013-11-30,Sanfrecce Hiroshima,Shonan Bellmare,11.7,0.0,12.3
+2013-11-30,Cerezo Osaka,Kashima Antlers,9.1,0.0,10.3
+2013-11-30,Sagan Tosu,Urawa Reds,11.3,0.0,13.4
+2013-12-07,Urawa Reds,Cerezo Osaka,9.9,0.0,9.3
+2013-12-07,Kofu,Sagan Tosu,9.5,0.0,10.9
+2013-12-07,Shonan Bellmare,Omiya Ardija,10.2,0.0,8.4
+2013-12-07,Shimizu S-Pulse,Kashiwa Reysol,10.7,0.0,19.8
+2013-12-07,Kawasaki Frontale,Yokohama F. Marinos,10.2,0.0,10.8
+2013-12-07,Iwata,Oita Trinita,10.6,0.0,25.3
+2013-12-07,FC Tokyo,Vegalta Sendai,9.2,0.0,8.7
+2013-12-07,Albirex Niigata,Nagoya Grampus,4.5,6.7,11.5
+2013-12-07,Kashima Antlers,Sanfrecce Hiroshima,10.5,0.0,15.4
+2014-03-01,Nagoya Grampus,Shimizu S-Pulse,13.4,0.0,9.7
+2014-03-01,Cerezo Osaka,Sanfrecce Hiroshima,10.7,0.7,10.0
+2014-03-01,Vegalta Sendai,Albirex Niigata,4.2,0.0,6.2
+2014-03-01,Kofu,Kashima Antlers,9.4,1.8,5.9
+2014-03-01,Kashiwa Reysol,FC Tokyo,7.8,0.4,18.3
+2014-03-01,Gamba Osaka,Urawa Reds,10.4,0.7,10.0
+2014-03-01,Sagan Tosu,Tokushima,12.6,2.7,3.8
+2014-03-02,Yokohama F. Marinos,Omiya Ardija,5.9,6.7,21.4
+2014-03-02,Kawasaki Frontale,Vissel Kobe,6.1,7.9,29.4
+2014-03-08,Vissel Kobe,Kashiwa Reysol,7.4,0.0,12.1
+2014-03-08,Omiya Ardija,Nagoya Grampus,7.8,0.0,18.4
+2014-03-08,Urawa Reds,Sagan Tosu,7.8,0.0,21.2
+2014-03-08,Shimizu S-Pulse,Yokohama F. Marinos,8.0,0.0,18.1
+2014-03-08,Kashima Antlers,Vegalta Sendai,7.4,0.0,20.2
+2014-03-08,Tokushima,Cerezo Osaka,8.2,0.0,13.7
+2014-03-08,Sanfrecce Hiroshima,Kawasaki Frontale,8.3,0.0,4.6
+2014-03-08,FC Tokyo,Kofu,7.4,0.0,11.2
+2014-03-08,Albirex Niigata,Gamba Osaka,1.3,0.2,29.1
+2014-03-15,Vegalta Sendai,Gamba Osaka,5.7,0.0,22.9
+2014-03-15,Sagan Tosu,Kashima Antlers,12.0,0.0,14.2
+2014-03-15,Vissel Kobe,FC Tokyo,8.7,0.0,12.2
+2014-03-15,Kawasaki Frontale,Omiya Ardija,8.5,0.0,20.4
+2014-03-15,Kashiwa Reysol,Nagoya Grampus,9.0,0.0,19.8
+2014-03-15,Cerezo Osaka,Shimizu S-Pulse,8.0,0.0,12.1
+2014-03-15,Kofu,Albirex Niigata,6.6,0.0,5.9
+2014-03-15,Sanfrecce Hiroshima,Urawa Reds,11.6,0.0,12.3
+2014-03-15,Yokohama F. Marinos,Tokushima,8.2,0.0,17.1
+2014-03-23,Albirex Niigata,Sagan Tosu,8.4,0.4,22.0
+2014-03-23,Kofu,Yokohama F. Marinos,11.1,0.0,13.4
+2014-03-23,Tokushima,Kashiwa Reysol,15.4,0.0,7.8
+2014-03-23,Kashima Antlers,Cerezo Osaka,12.9,0.1,12.2
+2014-03-23,Nagoya Grampus,Vissel Kobe,13.8,0.0,21.1
+2014-03-23,Urawa Reds,Shimizu S-Pulse,14.1,0.0,19.2
+2014-03-23,Gamba Osaka,Sanfrecce Hiroshima,13.7,0.0,13.4
+2014-03-23,FC Tokyo,Kawasaki Frontale,12.5,0.0,16.9
+2014-03-23,Omiya Ardija,Vegalta Sendai,14.0,0.0,22.7
+2014-03-28,Kawasaki Frontale,Nagoya Grampus,16.3,0.0,24.7
+2014-03-29,Cerezo Osaka,Albirex Niigata,17.6,0.0,15.2
+2014-03-29,Sanfrecce Hiroshima,Tokushima,15.2,4.4,18.0
+2014-03-29,Vegalta Sendai,Kofu,17.7,0.0,14.8
+2014-03-29,Yokohama F. Marinos,Kashima Antlers,17.6,0.0,29.1
+2014-03-29,Kashiwa Reysol,Omiya Ardija,18.1,0.0,27.7
+2014-03-29,Vissel Kobe,Urawa Reds,17.5,0.1,19.0
+2014-03-29,Shimizu S-Pulse,FC Tokyo,15.8,0.0,21.2
+2014-03-29,Sagan Tosu,Gamba Osaka,15.6,18.5,13.0
+2014-04-06,Kashiwa Reysol,Cerezo Osaka,10.1,0.2,22.2
+2014-04-06,Albirex Niigata,Yokohama F. Marinos,5.4,2.2,22.8
+2014-04-06,Nagoya Grampus,Sanfrecce Hiroshima,8.8,0.8,29.2
+2014-04-06,Kofu,Shimizu S-Pulse,7.4,2.2,15.6
+2014-04-06,Tokushima,Kawasaki Frontale,10.0,0.0,24.9
+2014-04-06,Omiya Ardija,Vissel Kobe,9.6,0.0,25.0
+2014-04-06,FC Tokyo,Sagan Tosu,8.4,2.1,15.5
+2014-04-06,Gamba Osaka,Kashima Antlers,8.3,0.8,19.7
+2014-04-06,Urawa Reds,Vegalta Sendai,10.3,0.9,23.1
+2014-04-11,Kawasaki Frontale,Kashiwa Reysol,13.9,0.0,23.5
+2014-04-12,Shimizu S-Pulse,Omiya Ardija,13.0,0.0,22.3
+2014-04-12,Sanfrecce Hiroshima,FC Tokyo,15.2,0.4,4.5
+2014-04-12,Sagan Tosu,Kofu,17.7,1.5,5.4
+2014-04-12,Nagoya Grampus,Urawa Reds,16.8,0.0,18.1
+2014-04-12,Vissel Kobe,Tokushima,16.0,0.0,7.4
+2014-04-12,Kashima Antlers,Albirex Niigata,15.7,0.0,10.7
+2014-04-12,Yokohama F. Marinos,Vegalta Sendai,14.6,0.2,12.8
+2014-04-12,Cerezo Osaka,Gamba Osaka,15.9,0.0,5.4
+2014-04-19,Kofu,Nagoya Grampus,14.4,2.1,6.1
+2014-04-19,Urawa Reds,Kawasaki Frontale,13.5,0.0,26.0
+2014-04-19,Gamba Osaka,Omiya Ardija,13.7,0.0,18.4
+2014-04-19,FC Tokyo,Cerezo Osaka,13.0,0.0,19.7
+2014-04-19,Kashima Antlers,Vissel Kobe,11.7,0.0,26.1
+2014-04-19,Vegalta Sendai,Sagan Tosu,6.2,0.0,12.3
+2014-04-19,Tokushima,Shimizu S-Pulse,15.0,0.0,22.0
+2014-04-19,Kashiwa Reysol,Yokohama F. Marinos,12.9,0.0,27.6
+2014-04-20,Albirex Niigata,Sanfrecce Hiroshima,13.7,0.0,9.0
+2014-04-26,Vissel Kobe,Cerezo Osaka,20.2,0.0,14.5
+2014-04-26,Kashiwa Reysol,Urawa Reds,19.8,0.0,17.5
+2014-04-26,Shimizu S-Pulse,Vegalta Sendai,16.3,0.0,11.9
+2014-04-26,Tokushima,Albirex Niigata,19.8,0.0,16.5
+2014-04-26,Yokohama F. Marinos,FC Tokyo,17.8,0.0,17.7
+2014-04-26,Nagoya Grampus,Sagan Tosu,19.6,8.1,13.2
+2014-04-26,Kawasaki Frontale,Gamba Osaka,18.6,0.0,21.9
+2014-04-26,Omiya Ardija,Kofu,19.8,0.5,16.2
+2014-04-26,Sanfrecce Hiroshima,Kashima Antlers,20.3,0.0,11.1
+2014-04-29,Kofu,Tokushima,15.2,3.4,9.2
+2014-04-29,Sagan Tosu,Sanfrecce Hiroshima,18.6,1.0,16.9
+2014-04-29,FC Tokyo,Nagoya Grampus,17.2,0.0,14.1
+2014-04-29,Albirex Niigata,Vissel Kobe,21.4,0.0,7.9
+2014-04-29,Cerezo Osaka,Omiya Ardija,17.6,12.6,21.1
+2014-04-29,Kashima Antlers,Shimizu S-Pulse,18.1,0.1,11.3
+2014-04-29,Urawa Reds,Yokohama F. Marinos,18.9,0.0,14.2
+2014-04-29,Vegalta Sendai,Kawasaki Frontale,11.0,0.0,12.6
+2014-04-29,Gamba Osaka,Kashiwa Reysol,17.2,12.6,21.1
+2014-05-03,Nagoya Grampus,Cerezo Osaka,20.4,0.4,25.5
+2014-05-03,Omiya Ardija,Albirex Niigata,23.4,0.0,13.6
+2014-05-03,Urawa Reds,FC Tokyo,23.6,0.0,17.1
+2014-05-03,Shimizu S-Pulse,Sagan Tosu,21.5,0.0,21.3
+2014-05-03,Vissel Kobe,Sanfrecce Hiroshima,20.6,0.0,19.1
+2014-05-03,Kawasaki Frontale,Kofu,22.2,0.0,27.2
+2014-05-03,Yokohama F. Marinos,Gamba Osaka,21.7,0.0,20.4
+2014-05-03,Tokushima,Vegalta Sendai,20.4,0.0,20.9
+2014-05-03,Kashiwa Reysol,Kashima Antlers,22.9,0.0,22.9
+2014-05-06,Kofu,Urawa Reds,17.7,0.2,4.6
+2014-05-06,Sagan Tosu,Kashiwa Reysol,17.2,0.0,12.9
+2014-05-06,Kashima Antlers,Nagoya Grampus,13.8,0.0,22.4
+2014-05-06,Gamba Osaka,Tokushima,17.7,0.0,11.2
+2014-05-06,Vegalta Sendai,Vissel Kobe,14.7,0.2,10.2
+2014-05-06,FC Tokyo,Omiya Ardija,13.1,0.0,14.5
+2014-05-06,Albirex Niigata,Shimizu S-Pulse,14.9,0.0,15.2
+2014-05-10,Yokohama F. Marinos,Sagan Tosu,21.0,0.0,19.5
+2014-05-10,Nagoya Grampus,Gamba Osaka,22.6,0.0,16.5
+2014-05-10,Tokushima,FC Tokyo,18.8,0.0,15.7
+2014-05-10,Cerezo Osaka,Vegalta Sendai,19.4,0.0,19.6
+2014-05-10,Sanfrecce Hiroshima,Shimizu S-Pulse,21.1,0.0,9.0
+2014-05-10,Vissel Kobe,Kofu,19.9,0.0,20.2
+2014-05-10,Omiya Ardija,Urawa Reds,21.4,0.0,28.3
+2014-05-10,Kashiwa Reysol,Albirex Niigata,21.0,0.0,27.3
+2014-05-10,Kawasaki Frontale,Kashima Antlers,21.5,0.0,27.2
+2014-05-17,Kashima Antlers,Tokushima,21.3,0.0,19.2
+2014-05-17,Sagan Tosu,Omiya Ardija,22.8,0.0,8.2
+2014-05-17,Albirex Niigata,Nagoya Grampus,12.9,0.7,22.0
+2014-05-17,FC Tokyo,Gamba Osaka,21.5,0.0,12.7
+2014-05-17,Shimizu S-Pulse,Vissel Kobe,18.4,0.0,17.9
+2014-05-17,Kofu,Kashiwa Reysol,23.9,0.0,11.1
+2014-05-17,Urawa Reds,Cerezo Osaka,23.0,0.0,20.2
+2014-05-18,Kawasaki Frontale,Yokohama F. Marinos,21.3,0.0,22.3
+2014-05-18,Vegalta Sendai,Sanfrecce Hiroshima,17.8,0.0,22.2
+2014-07-15,Cerezo Osaka,Kawasaki Frontale,29.7,0.0,8.7
+2014-07-15,Sanfrecce Hiroshima,Yokohama F. Marinos,27.3,3.8,9.8
+2014-07-19,Vissel Kobe,Sagan Tosu,28.4,5.0,11.5
+2014-07-19,Omiya Ardija,Sanfrecce Hiroshima,24.9,5.8,10.9
+2014-07-19,Nagoya Grampus,Tokushima,25.1,10.6,9.3
+2014-07-19,Kashiwa Reysol,Vegalta Sendai,25.1,6.3,10.1
+2014-07-19,Gamba Osaka,Kofu,28.0,6.0,11.2
+2014-07-19,Cerezo Osaka,Yokohama F. Marinos,28.6,6.0,11.2
+2014-07-19,FC Tokyo,Kashima Antlers,24.5,4.1,10.9
+2014-07-19,Urawa Reds,Albirex Niigata,25.2,8.2,7.7
+2014-07-19,Shimizu S-Pulse,Kawasaki Frontale,23.4,10.0,11.2
+2014-07-23,Kashima Antlers,Omiya Ardija,28.6,0.0,8.7
+2014-07-23,Albirex Niigata,FC Tokyo,27.5,1.8,15.6
+2014-07-23,Gamba Osaka,Shimizu S-Pulse,30.4,0.0,14.8
+2014-07-23,Sanfrecce Hiroshima,Kashiwa Reysol,30.5,0.1,12.4
+2014-07-23,Sagan Tosu,Kawasaki Frontale,29.7,0.4,14.7
+2014-07-23,Kofu,Cerezo Osaka,31.9,0.0,5.9
+2014-07-23,Tokushima,Urawa Reds,29.3,1.1,7.5
+2014-07-23,Vegalta Sendai,Nagoya Grampus,27.5,0.7,7.9
+2014-07-23,Yokohama F. Marinos,Vissel Kobe,28.6,0.0,9.8
+2014-07-27,Omiya Ardija,Tokushima,30.9,0.9,12.0
+2014-07-27,Nagoya Grampus,Yokohama F. Marinos,29.9,0.9,18.3
+2014-07-27,Vissel Kobe,Gamba Osaka,29.7,1.3,13.5
+2014-07-27,Kawasaki Frontale,Albirex Niigata,30.5,3.4,29.2
+2014-07-27,FC Tokyo,Vegalta Sendai,30.5,6.3,14.0
+2014-07-27,Urawa Reds,Kashima Antlers,30.5,10.7,17.9
+2014-07-27,Shimizu S-Pulse,Kashiwa Reysol,29.9,0.0,25.2
+2014-07-27,Sanfrecce Hiroshima,Kofu,30.3,0.0,8.8
+2014-07-27,Cerezo Osaka,Sagan Tosu,30.2,1.1,12.3
+2014-08-02,Sagan Tosu,Nagoya Grampus,25.7,5.7,12.2
+2014-08-02,Kashiwa Reysol,Kawasaki Frontale,32.6,0.2,16.3
+2014-08-02,Urawa Reds,Vissel Kobe,33.3,0.2,9.7
+2014-08-02,Vegalta Sendai,Omiya Ardija,28.4,1.2,4.9
+2014-08-02,Albirex Niigata,Cerezo Osaka,31.8,0.0,9.3
+2014-08-02,Kashima Antlers,Sanfrecce Hiroshima,31.4,0.0,11.1
+2014-08-02,Gamba Osaka,Yokohama F. Marinos,27.0,10.5,4.7
+2014-08-02,Tokushima,Kofu,26.1,7.0,20.9
+2014-08-02,FC Tokyo,Shimizu S-Pulse,31.7,0.0,10.2
+2014-08-09,Omiya Ardija,Gamba Osaka,25.8,2.6,20.9
+2014-08-09,Yokohama F. Marinos,Kashiwa Reysol,26.0,5.8,15.0
+2014-08-09,Nagoya Grampus,Kashima Antlers,25.6,19.0,29.5
+2014-08-09,Vissel Kobe,Albirex Niigata,25.5,5.8,26.7
+2014-08-09,Cerezo Osaka,FC Tokyo,25.6,7.1,22.4
+2014-08-09,Kofu,Vegalta Sendai,24.1,2.2,9.4
+2014-08-09,Shimizu S-Pulse,Tokushima,25.5,2.1,19.8
+2014-08-09,Kawasaki Frontale,Urawa Reds,26.3,4.6,22.7
+2014-08-11,Sanfrecce Hiroshima,Sagan Tosu,27.0,0.7,8.4
+2014-08-16,Kashiwa Reysol,Vissel Kobe,27.7,1.0,18.6
+2014-08-16,Kawasaki Frontale,Cerezo Osaka,28.5,0.5,32.5
+2014-08-16,Vegalta Sendai,Shimizu S-Pulse,20.2,34.2,6.2
+2014-08-16,Tokushima,Yokohama F. Marinos,27.3,8.0,16.9
+2014-08-16,Sagan Tosu,FC Tokyo,27.3,0.4,11.5
+2014-08-16,Albirex Niigata,Omiya Ardija,24.2,15.7,7.7
+2014-08-16,Kashima Antlers,Kofu,27.8,0.8,12.8
+2014-08-16,Urawa Reds,Sanfrecce Hiroshima,27.5,2.3,17.1
+2014-08-16,Gamba Osaka,Nagoya Grampus,27.8,8.6,14.7
+2014-08-23,Kofu,Gamba Osaka,26.7,0.3,8.3
+2014-08-23,Vissel Kobe,Vegalta Sendai,26.8,11.7,10.5
+2014-08-23,Shimizu S-Pulse,Kashima Antlers,24.6,1.5,12.2
+2014-08-23,FC Tokyo,Urawa Reds,28.8,0.0,18.4
+2014-08-23,Albirex Niigata,Tokushima,27.7,0.0,9.7
+2014-08-23,Nagoya Grampus,Kashiwa Reysol,25.5,2.1,9.1
+2014-08-23,Omiya Ardija,Sagan Tosu,29.9,0.4,17.0
+2014-08-23,Yokohama F. Marinos,Kawasaki Frontale,27.5,0.0,22.3
+2014-08-23,Sanfrecce Hiroshima,Cerezo Osaka,27.2,2.3,9.0
+2014-08-30,Urawa Reds,Omiya Ardija,23.6,0.0,15.5
+2014-08-30,Sagan Tosu,Shimizu S-Pulse,26.5,0.0,12.4
+2014-08-30,Nagoya Grampus,Kawasaki Frontale,25.2,0.7,11.6
+2014-08-30,Kashiwa Reysol,Kofu,23.2,0.0,18.0
+2014-08-30,Vegalta Sendai,Yokohama F. Marinos,22.5,0.9,14.2
+2014-08-30,Kashima Antlers,FC Tokyo,22.5,1.7,21.1
+2014-08-30,Tokushima,Sanfrecce Hiroshima,26.0,0.0,8.4
+2014-08-30,Gamba Osaka,Albirex Niigata,27.0,0.0,9.0
+2014-08-30,Cerezo Osaka,Vissel Kobe,27.1,0.0,9.0
+2014-09-13,Yokohama F. Marinos,Nagoya Grampus,23.3,0.4,11.2
+2014-09-13,Kawasaki Frontale,Tokushima,23.6,0.0,12.6
+2014-09-13,Albirex Niigata,Vegalta Sendai,20.7,2.6,14.6
+2014-09-13,Sanfrecce Hiroshima,Gamba Osaka,25.4,0.0,8.2
+2014-09-13,Cerezo Osaka,Kashiwa Reysol,24.0,0.0,11.9
+2014-09-13,Kofu,Sagan Tosu,23.6,0.2,5.2
+2014-09-13,FC Tokyo,Vissel Kobe,22.8,0.5,9.8
+2014-09-13,Omiya Ardija,Kashima Antlers,23.3,0.1,9.4
+2014-09-13,Shimizu S-Pulse,Urawa Reds,22.0,0.0,9.0
+2014-09-20,Kashima Antlers,Yokohama F. Marinos,20.1,0.6,15.4
+2014-09-20,Nagoya Grampus,Kofu,22.3,0.0,9.3
+2014-09-20,Gamba Osaka,Cerezo Osaka,22.4,0.0,11.4
+2014-09-20,Sanfrecce Hiroshima,Albirex Niigata,22.4,0.0,10.4
+2014-09-20,Kawasaki Frontale,FC Tokyo,20.8,0.0,16.0
+2014-09-20,Sagan Tosu,Vegalta Sendai,20.8,0.0,13.7
+2014-09-20,Tokushima,Omiya Ardija,21.1,0.0,10.0
+2014-09-20,Vissel Kobe,Shimizu S-Pulse,22.6,0.0,12.9
+2014-09-20,Urawa Reds,Kashiwa Reysol,21.0,0.0,12.2
+2014-09-23,FC Tokyo,Tokushima,22.2,0.0,13.4
+2014-09-23,Shimizu S-Pulse,Gamba Osaka,21.1,0.0,12.7
+2014-09-23,Vegalta Sendai,Kashima Antlers,21.4,0.0,7.5
+2014-09-23,Albirex Niigata,Urawa Reds,21.9,0.0,9.6
+2014-09-23,Yokohama F. Marinos,Sanfrecce Hiroshima,22.8,0.0,12.4
+2014-09-23,Omiya Ardija,Kawasaki Frontale,23.1,0.0,11.4
+2014-09-23,Kofu,Vissel Kobe,23.2,0.0,6.9
+2014-09-23,Cerezo Osaka,Nagoya Grampus,26.1,0.0,10.0
+2014-09-23,Kashiwa Reysol,Sagan Tosu,23.1,0.0,11.2
+2014-09-27,Sanfrecce Hiroshima,Vissel Kobe,24.6,0.0,2.3
+2014-09-27,Gamba Osaka,Sagan Tosu,25.0,0.0,11.4
+2014-09-27,Yokohama F. Marinos,Kofu,20.3,0.0,24.7
+2014-09-27,FC Tokyo,Kashiwa Reysol,19.5,0.0,17.4
+2014-09-27,Nagoya Grampus,Albirex Niigata,23.2,0.0,10.7
+2014-09-27,Omiya Ardija,Shimizu S-Pulse,20.0,0.0,14.5
+2014-09-27,Kawasaki Frontale,Vegalta Sendai,20.5,0.0,28.6
+2014-09-27,Tokushima,Kashima Antlers,24.6,0.0,4.6
+2014-09-27,Cerezo Osaka,Urawa Reds,25.5,0.0,11.4
+2014-10-05,Albirex Niigata,Kawasaki Frontale,16.7,4.2,10.5
+2014-10-05,Kofu,Omiya Ardija,13.9,10.9,7.2
+2014-10-05,Vegalta Sendai,FC Tokyo,15.9,2.4,10.7
+2014-10-05,Kashiwa Reysol,Sanfrecce Hiroshima,17.8,38.4,25.3
+2014-10-05,Sagan Tosu,Yokohama F. Marinos,19.4,3.5,26.0
+2014-10-05,Vissel Kobe,Nagoya Grampus,22.9,2.1,22.4
+2014-10-05,Urawa Reds,Tokushima,17.3,28.1,19.6
+2014-10-05,Shimizu S-Pulse,Cerezo Osaka,18.3,41.0,27.9
+2014-10-05,Kashima Antlers,Gamba Osaka,19.8,35.4,24.0
+2014-10-18,Vegalta Sendai,Urawa Reds,17.6,0.0,12.1
+2014-10-18,Tokushima,Vissel Kobe,17.7,0.0,12.2
+2014-10-18,Gamba Osaka,Kawasaki Frontale,18.7,0.0,7.9
+2014-10-18,Kashima Antlers,Kashiwa Reysol,18.1,0.0,12.9
+2014-10-18,Yokohama F. Marinos,Shimizu S-Pulse,18.4,0.0,7.9
+2014-10-18,Albirex Niigata,Kofu,16.5,0.0,9.1
+2014-10-18,Sanfrecce Hiroshima,Nagoya Grampus,19.7,0.0,4.0
+2014-10-18,Omiya Ardija,FC Tokyo,17.6,0.0,8.4
+2014-10-18,Sagan Tosu,Cerezo Osaka,20.1,0.0,9.0
+2014-10-22,Urawa Reds,Kofu,14.0,6.5,20.7
+2014-10-22,Shimizu S-Pulse,Albirex Niigata,16.2,10.8,21.9
+2014-10-22,Omiya Ardija,Yokohama F. Marinos,14.2,7.1,9.7
+2014-10-22,Nagoya Grampus,Vegalta Sendai,19.5,13.1,8.6
+2014-10-22,Kawasaki Frontale,Sagan Tosu,15.0,11.2,30.9
+2014-10-22,Kashiwa Reysol,Gamba Osaka,14.0,10.3,26.1
+2014-10-22,FC Tokyo,Sanfrecce Hiroshima,14.0,7.6,13.1
+2014-10-22,Cerezo Osaka,Tokushima,16.7,3.4,15.0
+2014-10-22,Vissel Kobe,Kashima Antlers,17.3,3.1,20.2
+2014-10-26,Vegalta Sendai,Kashiwa Reysol,18.2,0.0,7.7
+2014-10-26,Vissel Kobe,Omiya Ardija,22.1,0.0,7.2
+2014-10-26,Sagan Tosu,Albirex Niigata,20.5,4.8,5.4
+2014-10-26,Gamba Osaka,FC Tokyo,22.0,0.0,7.1
+2014-10-26,Kofu,Kawasaki Frontale,19.6,2.8,8.8
+2014-10-26,Kashima Antlers,Urawa Reds,21.6,0.2,11.6
+2014-10-26,Yokohama F. Marinos,Cerezo Osaka,20.4,1.2,10.3
+2014-10-26,Shimizu S-Pulse,Sanfrecce Hiroshima,18.7,3.5,7.2
+2014-10-26,Tokushima,Nagoya Grampus,21.8,0.1,8.7
+2014-11-02,Cerezo Osaka,Kofu,19.5,3.4,17.4
+2014-11-02,Albirex Niigata,Kashima Antlers,19.2,3.8,25.3
+2014-11-02,Gamba Osaka,Vegalta Sendai,19.6,3.4,17.4
+2014-11-02,Nagoya Grampus,FC Tokyo,20.2,1.1,10.3
+2014-11-02,Kawasaki Frontale,Shimizu S-Pulse,20.8,0.0,35.6
+2014-11-02,Kashiwa Reysol,Tokushima,21.0,0.0,31.1
+2014-11-02,Sanfrecce Hiroshima,Omiya Ardija,19.4,1.0,18.6
+2014-11-02,Sagan Tosu,Vissel Kobe,18.0,0.1,20.9
+2014-11-03,Yokohama F. Marinos,Urawa Reds,16.6,0.0,15.4
+2014-11-22,FC Tokyo,Albirex Niigata,14.8,0.0,5.0
+2014-11-22,Vegalta Sendai,Cerezo Osaka,13.8,0.0,9.4
+2014-11-22,Shimizu S-Pulse,Nagoya Grampus,14.6,0.0,7.6
+2014-11-22,Omiya Ardija,Kashiwa Reysol,15.3,0.0,6.4
+2014-11-22,Urawa Reds,Gamba Osaka,16.0,0.0,5.7
+2014-11-22,Kofu,Sanfrecce Hiroshima,16.4,0.0,4.2
+2014-11-22,Vissel Kobe,Yokohama F. Marinos,16.6,0.0,8.0
+2014-11-22,Kashima Antlers,Kawasaki Frontale,16.6,0.0,9.5
+2014-11-22,Tokushima,Sagan Tosu,16.5,0.2,6.8
+2014-11-29,Vegalta Sendai,Tokushima,12.7,0.5,6.3
+2014-11-29,Nagoya Grampus,Omiya Ardija,16.0,0.6,18.4
+2014-11-29,Kofu,FC Tokyo,15.6,0.4,8.1
+2014-11-29,Sagan Tosu,Urawa Reds,15.8,0.0,10.5
+2014-11-29,Kawasaki Frontale,Sanfrecce Hiroshima,16.4,0.4,14.8
+2014-11-29,Kashiwa Reysol,Shimizu S-Pulse,15.8,0.3,11.4
+2014-11-29,Gamba Osaka,Vissel Kobe,16.6,0.5,16.1
+2014-11-29,Cerezo Osaka,Kashima Antlers,16.6,0.5,16.1
+2014-11-29,Yokohama F. Marinos,Albirex Niigata,16.6,0.2,10.5
+2014-12-06,Tokushima,Gamba Osaka,6.5,0.1,27.5
+2014-12-06,Shimizu S-Pulse,Kofu,5.8,0.0,24.5
+2014-12-06,Urawa Reds,Nagoya Grampus,6.1,0.0,12.3
+2014-12-06,Omiya Ardija,Cerezo Osaka,5.6,0.0,15.3
+2014-12-06,Vissel Kobe,Kawasaki Frontale,6.5,0.4,23.9
+2014-12-06,Kashima Antlers,Sagan Tosu,7.1,0.0,15.1
+2014-12-06,Sanfrecce Hiroshima,Vegalta Sendai,5.0,0.4,22.5
+2014-12-06,FC Tokyo,Yokohama F. Marinos,5.2,0.6,10.1
+2014-12-06,Albirex Niigata,Kashiwa Reysol,1.0,1.8,12.7
+2015-03-07,Sagan Tosu,Albirex Niigata,10.0,0.0,14.8
+2015-03-07,Gamba Osaka,FC Tokyo,9.3,9.0,11.0
+2015-03-07,Nagoya Grampus,Yamaga,11.0,1.8,6.1
+2015-03-07,Sanfrecce Hiroshima,Kofu,8.1,2.5,7.9
+2015-03-07,Yokohama F. Marinos,Kawasaki Frontale,6.8,1.0,19.1
+2015-03-07,Shonan Bellmare,Urawa Reds,6.6,1.0,19.1
+2015-03-07,Vegalta Sendai,Montedio Yamagata,5.6,0.0,11.5
+2015-03-07,Vissel Kobe,Kashiwa Reysol,9.2,10.4,11.5
+2015-03-08,Shimizu S-Pulse,Kashima Antlers,12.8,0.0,14.3
+2015-03-13,Kashiwa Reysol,Vegalta Sendai,11.0,0.0,18.4
+2015-03-14,Urawa Reds,Montedio Yamagata,9.8,0.0,10.5
+2015-03-14,Yamaga,Sanfrecce Hiroshima,2.6,0.0,11.1
+2015-03-14,Kawasaki Frontale,Vissel Kobe,9.2,0.5,12.2
+2015-03-14,Kofu,Nagoya Grampus,7.5,0.0,7.9
+2015-03-14,Kashima Antlers,Shonan Bellmare,8.6,0.0,17.5
+2015-03-14,FC Tokyo,Yokohama F. Marinos,8.1,0.9,8.8
+2015-03-14,Albirex Niigata,Shimizu S-Pulse,3.6,0.0,16.0
+2015-03-14,Sagan Tosu,Gamba Osaka,12.4,0.0,9.5
+2015-03-22,Shimizu S-Pulse,Yamaga,13.8,0.2,18.8
+2015-03-22,Kofu,Gamba Osaka,16.1,0.0,15.6
+2015-03-22,Albirex Niigata,Kashiwa Reysol,12.7,0.4,15.1
+2015-03-22,Sanfrecce Hiroshima,Urawa Reds,16.1,0.0,14.8
+2015-03-22,Shonan Bellmare,Vegalta Sendai,14.7,0.1,26.0
+2015-03-22,Vissel Kobe,FC Tokyo,15.9,0.0,17.3
+2015-03-22,Nagoya Grampus,Kashima Antlers,15.7,2.3,12.2
+2015-03-22,Montedio Yamagata,Kawasaki Frontale,10.2,0.2,16.1
+2015-03-22,Yokohama F. Marinos,Sagan Tosu,14.6,0.1,26.0
+2015-04-03,Gamba Osaka,Nagoya Grampus,19.6,12.6,25.9
+2015-04-03,Kashima Antlers,Sagan Tosu,19.0,0.2,42.0
+2015-04-04,Vegalta Sendai,Shimizu S-Pulse,8.7,0.0,17.6
+2015-04-04,Montedio Yamagata,Shonan Bellmare,9.7,0.0,15.6
+2015-04-04,Urawa Reds,Yamaga,11.3,0.0,21.1
+2015-04-04,FC Tokyo,Kofu,11.0,0.0,12.2
+2015-04-04,Kashiwa Reysol,Yokohama F. Marinos,11.1,0.1,24.7
+2015-04-04,Sanfrecce Hiroshima,Vissel Kobe,19.5,2.5,8.0
+2015-04-04,Kawasaki Frontale,Albirex Niigata,11.6,0.1,27.5
+2015-04-12,Yokohama F. Marinos,Vegalta Sendai,14.2,0.0,14.2
+2015-04-12,Shimizu S-Pulse,Gamba Osaka,13.6,0.0,14.7
+2015-04-12,Yamaga,Kashiwa Reysol,14.8,0.0,7.6
+2015-04-12,Nagoya Grampus,Sanfrecce Hiroshima,16.2,0.4,12.6
+2015-04-12,Sagan Tosu,Montedio Yamagata,19.1,0.5,14.3
+2015-04-12,Vissel Kobe,Kofu,17.5,0.0,14.8
+2015-04-12,Shonan Bellmare,FC Tokyo,13.9,0.0,14.2
+2015-04-12,Kawasaki Frontale,Urawa Reds,14.4,0.0,17.2
+2015-04-12,Kashima Antlers,Albirex Niigata,13.3,0.0,17.3
+2015-04-16,Kashiwa Reysol,Kashima Antlers,18.4,0.0,14.8
+2015-04-18,Urawa Reds,Yokohama F. Marinos,16.2,0.0,32.7
+2015-04-18,Nagoya Grampus,Shimizu S-Pulse,17.0,0.0,10.5
+2015-04-18,Shonan Bellmare,Gamba Osaka,15.5,0.0,37.8
+2015-04-18,Vegalta Sendai,Kawasaki Frontale,15.6,0.0,26.3
+2015-04-18,Montedio Yamagata,Yamaga,13.5,0.0,27.4
+2015-04-18,Kofu,Sagan Tosu,17.5,0.0,17.2
+2015-04-18,Albirex Niigata,Vissel Kobe,15.0,0.0,31.7
+2015-04-18,FC Tokyo,Sanfrecce Hiroshima,16.0,0.0,32.2
+2015-04-25,Kawasaki Frontale,Kofu,17.7,0.2,16.9
+2015-04-25,Montedio Yamagata,FC Tokyo,14.7,0.0,14.5
+2015-04-25,Urawa Reds,Nagoya Grampus,17.1,0.6,17.9
+2015-04-25,Yokohama F. Marinos,Shonan Bellmare,17.5,0.8,11.3
+2015-04-25,Yamaga,Vegalta Sendai,14.3,0.0,12.4
+2015-04-25,Kashima Antlers,Vissel Kobe,15.6,0.7,21.4
+2015-04-25,Sanfrecce Hiroshima,Shimizu S-Pulse,20.2,0.0,7.3
+2015-04-25,Sagan Tosu,Kashiwa Reysol,19.8,0.0,12.1
+2015-04-26,Gamba Osaka,Albirex Niigata,20.8,0.0,13.1
+2015-04-29,Yokohama F. Marinos,Sanfrecce Hiroshima,19.0,0.0,14.9
+2015-04-29,Shonan Bellmare,Sagan Tosu,18.4,0.0,14.9
+2015-04-29,Vissel Kobe,Nagoya Grampus,20.3,0.0,9.2
+2015-04-29,Kofu,Urawa Reds,20.8,0.0,8.5
+2015-04-29,Gamba Osaka,Yamaga,21.3,0.0,7.3
+2015-04-29,Shimizu S-Pulse,Montedio Yamagata,17.3,0.2,14.0
+2015-04-29,Albirex Niigata,FC Tokyo,21.7,0.0,16.3
+2015-04-29,Vegalta Sendai,Kashima Antlers,16.9,0.0,9.8
+2015-04-29,Kawasaki Frontale,Kashiwa Reysol,19.8,0.0,15.5
+2015-05-02,Yamaga,Albirex Niigata,24.1,0.0,9.6
+2015-05-02,Kashiwa Reysol,Shimizu S-Pulse,23.2,0.0,15.0
+2015-05-02,Sagan Tosu,Vissel Kobe,24.9,0.0,11.5
+2015-05-02,Sanfrecce Hiroshima,Vegalta Sendai,23.8,0.0,9.5
+2015-05-02,Kashima Antlers,Kofu,20.9,0.0,13.6
+2015-05-02,Urawa Reds,Gamba Osaka,23.7,0.0,14.8
+2015-05-02,Montedio Yamagata,Yokohama F. Marinos,22.4,0.0,10.5
+2015-05-02,Nagoya Grampus,Shonan Bellmare,23.1,0.0,15.5
+2015-05-02,FC Tokyo,Kawasaki Frontale,22.7,0.0,12.7
+2015-05-06,Yokohama F. Marinos,Nagoya Grampus,18.7,0.0,20.6
+2015-05-06,Vegalta Sendai,FC Tokyo,17.9,0.0,11.9
+2015-05-06,Shonan Bellmare,Vissel Kobe,18.1,0.0,20.6
+2015-05-06,Kawasaki Frontale,Sanfrecce Hiroshima,19.5,0.0,24.7
+2015-05-06,Yamaga,Kofu,21.5,0.0,7.4
+2015-05-06,Shimizu S-Pulse,Sagan Tosu,17.1,0.0,16.4
+2015-05-06,Albirex Niigata,Montedio Yamagata,20.5,0.0,10.9
+2015-05-10,Vegalta Sendai,Urawa Reds,13.7,0.0,28.2
+2015-05-10,Sanfrecce Hiroshima,Gamba Osaka,23.0,0.0,10.0
+2015-05-10,Vissel Kobe,Shimizu S-Pulse,20.2,0.0,20.3
+2015-05-10,FC Tokyo,Kashima Antlers,21.3,1.5,20.3
+2015-05-10,Yokohama F. Marinos,Albirex Niigata,20.7,2.7,15.8
+2015-05-10,Montedio Yamagata,Kashiwa Reysol,11.7,0.0,25.5
+2015-05-10,Kofu,Shonan Bellmare,23.0,0.0,11.1
+2015-05-10,Nagoya Grampus,Kawasaki Frontale,21.3,0.0,25.9
+2015-05-10,Sagan Tosu,Yamaga,22.9,0.0,10.9
+2015-05-14,Kashiwa Reysol,Shonan Bellmare,23.9,0.0,25.3
+2015-05-16,Kashima Antlers,Sanfrecce Hiroshima,20.4,0.1,13.5
+2015-05-16,Gamba Osaka,Kawasaki Frontale,20.3,0.0,10.8
+2015-05-16,Urawa Reds,FC Tokyo,22.4,0.0,12.2
+2015-05-16,Nagoya Grampus,Sagan Tosu,21.9,0.0,18.2
+2015-05-16,Shimizu S-Pulse,Yokohama F. Marinos,21.2,1.2,9.4
+2015-05-16,Yamaga,Vissel Kobe,19.8,0.1,9.4
+2015-05-16,Kofu,Montedio Yamagata,23.1,0.5,6.3
+2015-05-16,Albirex Niigata,Vegalta Sendai,16.3,0.0,8.0
+2015-05-23,Kawasaki Frontale,Sagan Tosu,21.9,0.0,25.2
+2015-05-23,Sanfrecce Hiroshima,Albirex Niigata,20.8,0.0,7.9
+2015-05-23,Urawa Reds,Kashima Antlers,23.3,0.0,17.8
+2015-05-23,Yamaga,Yokohama F. Marinos,22.5,0.0,6.4
+2015-05-23,FC Tokyo,Nagoya Grampus,22.2,0.0,17.2
+2015-05-23,Shonan Bellmare,Shimizu S-Pulse,21.1,0.0,18.8
+2015-05-23,Montedio Yamagata,Vissel Kobe,23.6,0.0,17.1
+2015-05-23,Vegalta Sendai,Kofu,23.6,0.0,14.5
+2015-05-30,FC Tokyo,Kashiwa Reysol,24.8,0.0,20.6
+2015-05-30,Albirex Niigata,Kofu,24.4,0.0,15.6
+2015-05-30,Nagoya Grampus,Montedio Yamagata,29.0,0.0,16.3
+2015-05-30,Sagan Tosu,Urawa Reds,21.5,18.2,8.7
+2015-05-30,Vissel Kobe,Vegalta Sendai,25.6,0.0,15.1
+2015-05-30,Shimizu S-Pulse,Kawasaki Frontale,22.7,0.0,17.3
+2015-05-30,Shonan Bellmare,Sanfrecce Hiroshima,23.2,0.0,20.5
+2015-05-30,Yokohama F. Marinos,Gamba Osaka,23.3,0.0,20.5
+2015-05-30,Kashima Antlers,Yamaga,23.6,0.0,13.9
+2015-06-03,Gamba Osaka,Kashima Antlers,22.2,3.6,13.6
+2015-06-03,Kashiwa Reysol,Urawa Reds,21.7,5.3,18.3
+2015-06-07,Gamba Osaka,Vissel Kobe,23.1,0.0,4.1
+2015-06-07,Kofu,Yokohama F. Marinos,22.3,0.0,8.0
+2015-06-07,Albirex Niigata,Nagoya Grampus,22.8,0.0,12.3
+2015-06-07,Kashiwa Reysol,Sanfrecce Hiroshima,22.4,0.0,17.4
+2015-06-07,Kawasaki Frontale,Shonan Bellmare,21.2,0.0,20.4
+2015-06-07,Montedio Yamagata,Kashima Antlers,23.7,0.0,5.4
+2015-06-07,Urawa Reds,Shimizu S-Pulse,22.5,0.0,14.9
+2015-06-07,Vegalta Sendai,Sagan Tosu,19.1,0.0,13.2
+2015-06-07,Yamaga,FC Tokyo,22.9,0.0,8.0
+2015-06-20,Sanfrecce Hiroshima,Montedio Yamagata,24.7,0.9,6.7
+2015-06-20,Vissel Kobe,Urawa Reds,24.4,1.9,6.4
+2015-06-20,Gamba Osaka,Vegalta Sendai,24.2,1.6,4.4
+2015-06-20,Kawasaki Frontale,Yamaga,22.5,0.0,21.9
+2015-06-20,Sagan Tosu,FC Tokyo,24.8,0.3,8.6
+2015-06-20,Nagoya Grampus,Kashiwa Reysol,23.3,2.4,13.8
+2015-06-20,Shimizu S-Pulse,Kofu,19.3,0.5,14.0
+2015-06-20,Shonan Bellmare,Albirex Niigata,21.3,0.0,18.4
+2015-06-20,Yokohama F. Marinos,Kashima Antlers,21.8,0.0,18.4
+2015-06-23,Kashiwa Reysol,Gamba Osaka,24.6,2.9,13.2
+2015-06-27,Yamaga,Shonan Bellmare,24.0,1.5,10.4
+2015-06-27,Vegalta Sendai,Nagoya Grampus,19.9,14.5,13.7
+2015-06-27,Urawa Reds,Albirex Niigata,25.8,0.2,8.8
+2015-06-27,Sagan Tosu,Sanfrecce Hiroshima,20.8,7.5,5.4
+2015-06-27,Kashima Antlers,Kawasaki Frontale,26.2,0.2,16.5
+2015-06-27,Kofu,Kashiwa Reysol,27.1,0.0,10.5
+2015-06-27,Vissel Kobe,Yokohama F. Marinos,23.8,0.0,23.4
+2015-06-27,FC Tokyo,Shimizu S-Pulse,24.5,0.0,4.9
+2015-06-27,Montedio Yamagata,Gamba Osaka,20.1,8.9,9.2
+2015-07-11,Gamba Osaka,Kofu,28.3,0.0,11.9
+2015-07-11,Shonan Bellmare,Nagoya Grampus,25.1,0.0,17.1
+2015-07-11,Vegalta Sendai,Sanfrecce Hiroshima,27.0,0.0,12.0
+2015-07-11,Kawasaki Frontale,FC Tokyo,26.4,0.0,23.3
+2015-07-11,Albirex Niigata,Kashima Antlers,27.1,0.0,8.8
+2015-07-11,Yamaga,Urawa Reds,27.0,0.0,7.2
+2015-07-11,Yokohama F. Marinos,Montedio Yamagata,25.4,0.0,17.1
+2015-07-11,Kashiwa Reysol,Sagan Tosu,27.8,0.0,21.9
+2015-07-11,Shimizu S-Pulse,Vissel Kobe,24.5,0.4,17.7
+2015-07-15,Yokohama F. Marinos,Kashiwa Reysol,27.0,0.0,24.2
+2015-07-15,Nagoya Grampus,Gamba Osaka,29.4,0.5,16.8
+2015-07-15,Montedio Yamagata,Urawa Reds,28.6,6.2,6.2
+2015-07-15,Kofu,Vegalta Sendai,29.6,0.0,10.5
+2015-07-15,FC Tokyo,Albirex Niigata,27.8,0.0,26.8
+2015-07-15,Sanfrecce Hiroshima,Yamaga,30.0,0.2,10.4
+2015-07-15,Sagan Tosu,Kawasaki Frontale,30.4,0.0,12.6
+2015-07-15,Vissel Kobe,Shonan Bellmare,30.5,0.0,17.0
+2015-07-15,Kashima Antlers,Shimizu S-Pulse,27.1,0.1,22.7
+2015-07-19,Gamba Osaka,Yokohama F. Marinos,28.1,0.0,15.8
+2015-07-19,Shonan Bellmare,Kofu,28.7,0.0,20.3
+2015-07-19,Kashiwa Reysol,Kawasaki Frontale,29.6,0.0,22.1
+2015-07-19,Urawa Reds,Sanfrecce Hiroshima,30.4,0.0,15.0
+2015-07-19,Vegalta Sendai,Vissel Kobe,27.3,0.0,13.0
+2015-07-19,FC Tokyo,Montedio Yamagata,30.1,0.5,12.5
+2015-07-19,Albirex Niigata,Sagan Tosu,26.5,0.0,11.3
+2015-07-19,Yamaga,Kashima Antlers,26.2,2.8,6.2
+2015-07-19,Shimizu S-Pulse,Nagoya Grampus,26.5,0.8,20.4
+2015-07-22,Gamba Osaka,Sagan Tosu,25.5,5.2,15.9
+2015-07-25,Kofu,Yamaga,33.3,0.0,8.2
+2015-07-25,Kashima Antlers,FC Tokyo,30.4,0.0,10.6
+2015-07-25,Sanfrecce Hiroshima,Yokohama F. Marinos,28.4,0.0,15.0
+2015-07-25,Vissel Kobe,Gamba Osaka,29.0,0.0,16.0
+2015-07-25,Nagoya Grampus,Urawa Reds,30.9,0.0,10.6
+2015-07-25,Sagan Tosu,Shonan Bellmare,31.1,0.0,10.6
+2015-07-25,Vegalta Sendai,Kashiwa Reysol,29.3,0.0,16.2
+2015-07-25,Montedio Yamagata,Albirex Niigata,27.5,0.0,19.8
+2015-07-25,Kawasaki Frontale,Shimizu S-Pulse,30.0,0.0,20.4
+2015-07-29,Sagan Tosu,Kashima Antlers,30.5,0.1,14.8
+2015-07-29,Albirex Niigata,Gamba Osaka,29.0,0.0,9.4
+2015-07-29,FC Tokyo,Vegalta Sendai,29.2,1.3,11.9
+2015-07-29,Montedio Yamagata,Nagoya Grampus,29.9,0.0,7.7
+2015-07-29,Vissel Kobe,Sanfrecce Hiroshima,30.4,0.2,12.8
+2015-07-29,Yamaga,Kawasaki Frontale,27.0,3.1,5.6
+2015-07-29,Shonan Bellmare,Kashiwa Reysol,27.8,0.0,11.8
+2015-07-29,Yokohama F. Marinos,Shimizu S-Pulse,28.9,0.0,11.8
+2015-07-29,Urawa Reds,Kofu,30.6,0.5,10.8
+2015-08-12,Albirex Niigata,Urawa Reds,28.9,0.0,10.5
+2015-08-12,Sanfrecce Hiroshima,Kashima Antlers,24.0,34.5,11.0
+2015-08-12,Kashiwa Reysol,Vissel Kobe,30.5,0.0,10.5
+2015-08-12,Kawasaki Frontale,Montedio Yamagata,29.9,0.2,14.7
+2015-08-12,Kofu,FC Tokyo,30.2,0.0,5.9
+2015-08-12,Nagoya Grampus,Yokohama F. Marinos,31.6,0.0,10.6
+2015-08-12,Shimizu S-Pulse,Shonan Bellmare,27.2,0.5,13.5
+2015-08-12,Vegalta Sendai,Yamaga,26.5,3.8,3.9
+2015-08-16,Shimizu S-Pulse,Albirex Niigata,26.7,0.0,12.4
+2015-08-16,Vissel Kobe,Kawasaki Frontale,28.0,3.7,9.3
+2015-08-16,Montedio Yamagata,Sagan Tosu,26.2,1.8,9.2
+2015-08-16,Urawa Reds,Shonan Bellmare,28.3,2.0,16.2
+2015-08-16,FC Tokyo,Gamba Osaka,28.0,0.9,11.2
+2015-08-16,Sanfrecce Hiroshima,Kashiwa Reysol,28.9,0.1,10.2
+2015-08-16,Yokohama F. Marinos,Kofu,28.5,0.7,7.8
+2015-08-16,Yamaga,Nagoya Grampus,26.7,0.3,7.1
+2015-08-16,Kashima Antlers,Vegalta Sendai,27.2,0.6,15.7
+2015-08-20,Kashiwa Reysol,Yamaga,25.5,0.7,7.2
+2015-08-22,Sagan Tosu,Yokohama F. Marinos,28.7,0.0,10.5
+2015-08-22,Shonan Bellmare,Kawasaki Frontale,28.3,0.0,17.3
+2015-08-22,Nagoya Grampus,FC Tokyo,28.8,1.1,15.1
+2015-08-22,Gamba Osaka,Shimizu S-Pulse,28.1,0.6,10.9
+2015-08-22,Urawa Reds,Vegalta Sendai,30.3,0.0,13.4
+2015-08-22,Kashima Antlers,Montedio Yamagata,29.4,0.0,17.2
+2015-08-22,Kofu,Vissel Kobe,30.8,0.0,5.7
+2015-08-22,Albirex Niigata,Sanfrecce Hiroshima,26.6,0.0,16.3
+2015-08-29,Sanfrecce Hiroshima,Nagoya Grampus,24.3,9.9,8.0
+2015-08-29,Vegalta Sendai,Albirex Niigata,19.4,2.8,9.4
+2015-08-29,Vissel Kobe,Sagan Tosu,27.2,2.3,10.9
+2015-08-29,Kawasaki Frontale,Kashima Antlers,21.6,0.0,28.8
+2015-08-29,Yokohama F. Marinos,Urawa Reds,21.7,0.2,21.5
+2015-08-29,Shimizu S-Pulse,FC Tokyo,22.9,2.0,8.1
+2015-08-30,Kashiwa Reysol,Kofu,23.6,4.6,13.8
+2015-08-30,Gamba Osaka,Shonan Bellmare,24.9,5.3,11.0
+2015-09-11,Urawa Reds,Kashiwa Reysol,26.0,0.6,11.0
+2015-09-12,Sagan Tosu,Shimizu S-Pulse,24.2,0.1,14.8
+2015-09-12,Montedio Yamagata,Sanfrecce Hiroshima,23.6,0.0,5.4
+2015-09-12,FC Tokyo,Vissel Kobe,25.2,0.0,16.9
+2015-09-12,Shonan Bellmare,Yamaga,24.9,0.0,17.6
+2015-09-12,Kofu,Kawasaki Frontale,26.6,0.0,7.2
+2015-09-12,Kashima Antlers,Gamba Osaka,25.7,0.7,14.0
+2015-09-12,Nagoya Grampus,Vegalta Sendai,25.7,0.0,8.4
+2015-09-12,Albirex Niigata,Yokohama F. Marinos,24.2,0.0,5.8
+2015-09-19,Vissel Kobe,Albirex Niigata,23.1,0.0,18.4
+2015-09-19,Yokohama F. Marinos,FC Tokyo,25.1,0.1,7.9
+2015-09-19,Kawasaki Frontale,Nagoya Grampus,25.9,0.0,10.2
+2015-09-19,Shimizu S-Pulse,Urawa Reds,23.0,0.0,12.3
+2015-09-19,Vegalta Sendai,Shonan Bellmare,23.7,0.0,15.0
+2015-09-19,Kofu,Kashima Antlers,25.9,0.0,4.1
+2015-09-19,Sanfrecce Hiroshima,Sagan Tosu,24.5,0.0,9.4
+2015-09-20,Yamaga,Gamba Osaka,19.8,0.0,8.4
+2015-09-20,Kashiwa Reysol,Montedio Yamagata,24.5,0.0,13.2

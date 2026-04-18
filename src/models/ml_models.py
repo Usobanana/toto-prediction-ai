@@ -83,7 +83,7 @@ class LogisticRegressionModel(_SklearnBase):
 class RandomForestModel(_SklearnBase):
     """
     RandomForestClassifier - Optuna 60試行最適化済みパラメータ (59特徴量)
-    バックテスト: 48.15% (旧100試行53特徴量比 +0.10%)
+    バックテスト: 48.15% (HierBayes 45.95% 比 +2.20%)
     """
     name = "random_forest"
 
@@ -112,7 +112,7 @@ class RandomForestModel(_SklearnBase):
 class ExtraTreesModel(_SklearnBase):
     """
     ExtraTreesClassifier - Optuna 60試行最適化済みパラメータ (59特徴量)
-    バックテスト: 47.99% (旧100試行53特徴量比 +0.02%)
+    バックテスト: 47.99%
     """
     name = "extra_trees"
 

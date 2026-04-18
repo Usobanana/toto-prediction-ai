@@ -204,7 +204,7 @@ class FeatureBuilder:
     時系列リークを防ぐため、各試合の特徴量は「その試合以前」のデータのみで計算する。
     """
 
-    def __init__(self, form_window: int = 5, elo_k: float = 32.0, elo_init: float = 1500.0):
+    def __init__(self, form_window: int = 5, elo_k: float = 38.0, elo_init: float = 1500.0):
         self.form_window = form_window  # 直近何試合を参照するか
         self.elo_k = elo_k
         self.elo_init = elo_init
@@ -395,15 +395,35 @@ class FeatureBuilder:
             feat["odds_draw_avg"] = od
             feat["odds_away_avg"] = oa
             # インプライド確率 (マージン除去なし)
-            if oh and od and oa:
+            if oh and od and oa and oh > 1 and od > 1 and oa > 1:
                 total = 1/oh + 1/od + 1/oa
                 feat["implied_prob_home"] = (1/oh) / total
                 feat["implied_prob_draw"] = (1/od) / total
                 feat["implied_prob_away"] = (1/oa) / total
+                feat["odds_overround"]    = total - 1.0        # ブックメーカーマージン (>0)
             else:
                 feat["implied_prob_home"] = np.nan
                 feat["implied_prob_draw"] = np.nan
                 feat["implied_prob_away"] = np.nan
+                feat["odds_overround"]    = np.nan
+
+            # --- Elo確率 & Elo-オッズ乖離 ---
+            h_elo = feat["home_elo"]
+            a_elo = feat["away_elo"]
+            elo_p_home = 1 / (1 + 10 ** ((a_elo - h_elo - 50) / 400))  # +50=ホームアドバンテージ
+            feat["elo_prob_home"] = elo_p_home
+            if not np.isnan(feat.get("implied_prob_home", np.nan)):
+                feat["elo_odds_diff"] = feat["implied_prob_home"] - elo_p_home
+            else:
+                feat["elo_odds_diff"] = np.nan
+
+            # --- フォームモメンタム (3試合 - 5試合 差で上昇/下降傾向を捕捉) ---
+            feat["form_momentum_home"] = (
+                feat.get("home_form_win_rate_3", np.nan) - feat.get("home_form_win_rate", np.nan)
+            )
+            feat["form_momentum_away"] = (
+                feat.get("away_form_win_rate_3", np.nan) - feat.get("away_form_win_rate", np.nan)
+            )
 
             features.append(feat)
 
