@@ -285,11 +285,25 @@ class FeatureBuilder:
                 feat[f"{prefix}_goals_for_avg"] = self._goals_for_avg(recent)
                 feat[f"{prefix}_goals_against_avg"] = self._goals_against_avg(recent)
 
-            # --- Head-to-Head ---
+            # --- Head-to-Head (全会場) ---
             h2h = [h for h in home_hist if h["opponent"] == away]
             feat["h2h_home_win_rate"] = self._win_rate(h2h[-5:]) if h2h else 0.33
             feat["h2h_count"] = len(h2h)
             feat["h2h_draw_rate"] = self._draw_rate(h2h[-5:]) if h2h else 0.25
+
+            # --- Head-to-Head (会場別) ---
+            # ホーム時: 今回と同じ組み合わせ（ホームチームのホームゲーム）
+            h2h_home_venue = [h for h in home_hist if h["opponent"] == away and h["is_home"]]
+            feat["h2h_home_venue_win_rate"]   = self._win_rate(h2h_home_venue[-5:])  if h2h_home_venue else 0.33
+            feat["h2h_home_venue_draw_rate"]  = self._draw_rate(h2h_home_venue[-5:]) if h2h_home_venue else 0.25
+            feat["h2h_home_venue_away_win_rate"] = self._away_win_rate(h2h_home_venue[-5:]) if h2h_home_venue else 0.33
+            feat["h2h_home_venue_count"]      = len(h2h_home_venue)
+            # アウェイ時: 逆会場（アウェイチームのホームゲーム）
+            h2h_away_venue = [h for h in home_hist if h["opponent"] == away and not h["is_home"]]
+            feat["h2h_away_venue_win_rate"]   = self._win_rate(h2h_away_venue[-5:])  if h2h_away_venue else 0.33
+            feat["h2h_away_venue_draw_rate"]  = self._draw_rate(h2h_away_venue[-5:]) if h2h_away_venue else 0.25
+            feat["h2h_away_venue_away_win_rate"] = self._away_win_rate(h2h_away_venue[-5:]) if h2h_away_venue else 0.33
+            feat["h2h_away_venue_count"]      = len(h2h_away_venue)
 
             # --- 休養日数 ---
             feat["rest_days_home"] = (current_date - team_last_date[home]).days if home in team_last_date and not pd.isna(current_date) else 30
@@ -503,6 +517,11 @@ class FeatureBuilder:
             return 0.33
         return sum(h["drew"] for h in hist) / len(hist)
 
+    def _away_win_rate(self, hist: list) -> float:
+        if not hist:
+            return 0.33
+        return sum(1 - h["won"] - h["drew"] for h in hist) / len(hist)
+
     def _goals_for_avg(self, hist: list) -> float:
         if not hist:
             return 1.0
@@ -540,6 +559,9 @@ def get_feature_columns(include_odds: bool = False) -> list[str]:
         "home_home_win_rate", "home_home_goals_for_avg", "home_home_goals_against_avg",
         "away_away_win_rate", "away_away_goals_for_avg", "away_away_goals_against_avg",
         "h2h_home_win_rate", "h2h_count",
+        # 会場別H2H (toto公式対戦データ相当)
+        "h2h_home_venue_win_rate", "h2h_home_venue_draw_rate", "h2h_home_venue_away_win_rate", "h2h_home_venue_count",
+        "h2h_away_venue_win_rate", "h2h_away_venue_draw_rate", "h2h_away_venue_away_win_rate", "h2h_away_venue_count",
         "home_games_played", "away_games_played",
         "rest_days_home", "rest_days_away",
         "elo_diff_abs", "both_draw_rate",

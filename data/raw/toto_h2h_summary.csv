@@ -1,0 +1,6 @@
+﻿hold_cnt_id,gameid,home_team,away_team,match_date,h2h_home_win_home,h2h_draw_home,h2h_away_win_home,h2h_home_win_away,h2h_draw_away,h2h_away_win_away,h2h_home_win_total,h2h_draw_total,h2h_away_win_total
+1624,54051,仙台,山形,2026/04/25,12,8,4,10,8,5,22,16,9
+1624,54054,相模原,湘南,2026/04/25,0,0,0,0,0,1,0,0,1
+1624,54142,札幌,いわき,2026/04/25,0,0,1,0,1,1,0,1,2
+1624,54143,福島,甲府,2026/04/25,0,0,0,0,0,1,0,0,1
+1624,54144,藤枝,大宮,2026/04/25,0,0,2,2,0,1,2,0,3
