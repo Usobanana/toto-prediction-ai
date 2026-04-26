@@ -275,7 +275,7 @@ def main():
             reasons = []
             if m.is_edge_uncertain:
                 if m.best_edge >= EDGE_HIGH_THR:
-                    reasons.append(f"edge={m.best_edge:.2f}≥{EDGE_HIGH_THR}")
+                    reasons.append(f"edge={m.best_edge:.2f}>={EDGE_HIGH_THR}")
                 if m.min_edge < EDGE_LOW_THR:
                     reasons.append(f"min_edge={m.min_edge:.2f}<{EDGE_LOW_THR} (市場強気)")
             if m.prob_uncertain:
@@ -300,7 +300,7 @@ def main():
 
     print()
     print("  [注意]")
-    print(f"  ・確率はRF+Optuna(61特徴量)。バックテスト正答率48.15%。")
+    print(f"  ・確率はRF+Optuna(67特徴量)。バックテスト正答率48.15%。")
     if toto_h2h:
         print(f"  ・toto公式H2Hデータで仙台/相模原/札幌/福島/藤枝 のH2H特徴量を補正済み。")
     if not has_vr:
